@@ -38,13 +38,22 @@ const ticTacToe = (() => {
             )
         }
     }
+    function resetPlayer() {
+        currentPlayers = []
+    }
     return {
         gameboard,
         currentPlayers,
         currentScore,
         createPlayer,
+        resetPlayer,
     }
 }
 )()
 
 console.log(ticTacToe);
+
+array1 = [1, 2, 3];
+console.log(array1);
+array1 = [];
+console.log(array1);
