@@ -5,7 +5,7 @@ const ticTacToe = (() => {
             ["First Column", "Second Column", "Third Column"]
         ];
         let currentMove = []; 
-        function makingMove (playerInput = 0) {
+        function makingMove (playerInput = '00') {
             let [playerInputForRow, playerInputForColumn] = playerInput.split('');
             +playerInputForColumn;
             +playerInputForRow;
@@ -26,13 +26,17 @@ const ticTacToe = (() => {
     })()
     let currentPlayers = [];
     function createPlayer(name = '') {
-        const { makingMove } = gameboard;
-        currentPlayers = currentPlayers.push(
-            {
-                name,
-                makingMove
-            }
-        )
+        if(currentPlayers.length >= 2) {
+            throw Error('There are already two created players')
+        } else {
+            const { makingMove } = gameboard;
+            currentPlayers = currentPlayers.push(
+                {
+                    name,
+                    makingMove
+                }
+            )
+        }
     }
     return {
         gameboard,
