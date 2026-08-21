@@ -37,7 +37,7 @@ const ticTacToe = (() => {
         }
     }
     function resetPlayer() {
-        currentPlayers = []
+        currentPlayers.splice(0, 1);
     }
     let displayControl = (() =>{
         let currentScore;
