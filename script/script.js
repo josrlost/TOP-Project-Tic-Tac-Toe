@@ -37,7 +37,18 @@ const ticTacToe = (() => {
         }
     }
     function resetPlayer() {
-        currentPlayers.splice(0, 1);
+        currentPlayers.splice(0, 2);
+    }
+    function modifyPlayer(name = '', playerNumber = 1) {
+        if(playerNumber === 1) {
+            currentPlayers[0].name = name;
+        }
+        else if(playerNumber === 2) {
+            currentPlayers[1].name = name;
+        }
+        else {
+            throw Error('Invalid input');
+        }
     }
     let displayControl = (() =>{
         let currentScore;
@@ -48,6 +59,7 @@ const ticTacToe = (() => {
         displayControl,
         createPlayer,
         resetPlayer,
+        modifyPlayer,
     }
 }
 )()
