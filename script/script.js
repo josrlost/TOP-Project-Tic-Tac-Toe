@@ -1,10 +1,10 @@
 const ticTacToe = (() => {
+    let currentMove = []; 
     const gameboard = (() => {
         let board = [
             ["First Row", "Second Row", "Third Row"],
             ["First Column", "Second Column", "Third Column"]
         ];
-        let currentMove = []; 
         function makingMove (playerInput = '00') {
             let [playerInputForRow, playerInputForColumn] = playerInput.split('');
             +playerInputForColumn;
@@ -19,32 +19,33 @@ const ticTacToe = (() => {
             return currentMove = resultedMove.push(board) 
             }
         }
-        return { currentMove, makingMove };
-    })()
-    let currentScore = (() =>{
-        const { currentMove } =  gameboard;
+        return { makingMove };
     })()
     let currentPlayers = [];
-    function createPlayer(name = '') {
+    function createPlayer(name = '', uid = null) {
         if(currentPlayers.length >= 2) {
             throw Error('There are already two created players')
         } else {
             const { makingMove } = gameboard;
-            currentPlayers = currentPlayers.push(
-                {
-                    name,
-                    makingMove
-                }
-            )
+            uid = crypto.randomUUID();
+            const player = {
+                name,
+                makingMove,
+                uid
+            }
+            currentPlayers.push(player);
         }
     }
     function resetPlayer() {
         currentPlayers = []
     }
+    let displayControl = (() =>{
+        let currentScore;
+    })()
     return {
         gameboard,
         currentPlayers,
-        currentScore,
+        displayControl,
         createPlayer,
         resetPlayer,
     }
@@ -52,8 +53,3 @@ const ticTacToe = (() => {
 )()
 
 console.log(ticTacToe);
-
-array1 = [1, 2, 3];
-console.log(array1);
-array1 = [];
-console.log(array1);
