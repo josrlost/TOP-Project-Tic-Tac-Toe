@@ -1,23 +1,18 @@
 const ticTacToe = (() => {
-    let currentMove = []; 
+    let name = '';
+    let boardMoves = [];
     const gameboard = (() => {
         let board = [
-            ["First Row", "Second Row", "Third Row"],
-            ["First Column", "Second Column", "Third Column"]
+            ['blank', 'first column', 'second column', 'third column'],
+            ['blank', 'first row', 'second row', 'third row'],
         ];
-        function makingMove (playerInput = '00') {
-            let [playerInputForRow, playerInputForColumn] = playerInput.split('');
-            +playerInputForColumn;
-            +playerInputForRow;
-            return playerInputForColumn;
-            return playerInputForRow;
-            for(let i = 0; i < board[1].length; i + playerInputForColumn) {
-                return board[1][i];
-                for(let j = 0; j < board[0].length; j + playerInputForRow) {
-                    return board[0][j];
-                }
-            return currentMove = resultedMove.push(board) 
-            }
+        function makingMove (playerInputForColumn = 0, playerInputForRow = 0) {
+            let resultedMove = [];
+            resultedMove.push(board[0][playerInputForColumn]);
+            resultedMove.push(board[1][playerInputForRow]);
+            console.log(resultedMove);
+            this.totalMoves.push([resultedMove])
+            this.lastMove = resultedMove.concat();
         }
         return { makingMove };
     })()
@@ -28,11 +23,15 @@ const ticTacToe = (() => {
         } else {
             const { makingMove } = gameboard;
             uid = crypto.randomUUID();
+            let totalMoves = [];
+            let lastMove = [];
             const player = {
                 name,
                 makingMove,
-                uid
-            }
+                uid,
+                totalMoves,
+                lastMove
+            };
             currentPlayers.push(player);
         }
     }
@@ -51,10 +50,23 @@ const ticTacToe = (() => {
         }
     }
     let displayControl = (() =>{
-        let currentScore;
+        let currentScore = '0 - 0';
+        function getTheCurrentMove() {
+            return currentMoves;
+        }
+        function getTheCurrentScore() {
+            return currentScore;
+        }
+        function setTheCurrentScore() {
+
+        }
+        return { 
+            getTheCurrentMove,
+            getTheCurrentScore,
+            setTheCurrentScore,
+        }
     })()
     return {
-        gameboard,
         currentPlayers,
         displayControl,
         createPlayer,
