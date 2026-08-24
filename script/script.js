@@ -10,7 +10,7 @@ const ticTacToe = (() => {
             ['blank', 'first row', 'second row', 'third row'],
         ];
         function makingMove (playerInputForColumn = 0, playerInputForRow = 0) {
-            if(playerTurn.player1 === 1 && playerTurn.player2 === 0 || playerTurn.player2 === 1 && playerTurn.player1 === 0) {
+            if(playerTurn.player1 === 1 && playerTurn.player2 === 0 && this.numberPlayer === 1 || playerTurn.player2 === 1 && playerTurn.player1 === 0 && this.numberPlayer === 2) {
                 let resultedMove = [];
                 resultedMove.push(board[0][playerInputForColumn]);
                 resultedMove.push(board[1][playerInputForRow]);
@@ -27,6 +27,9 @@ const ticTacToe = (() => {
                     playerTurn.player1 = 1;
                     playerTurn.player2 = 0;
                 }
+            }
+            else {
+                alert("It is not this player's turn");
             }
         }
         return { makingMove };
@@ -282,9 +285,9 @@ const ticTacToe = (() => {
         }
         function getTurn() {
             if(playerTurn.player1 === 1 && playerTurn.player2 === 0) {
-                return "It is player one's turn"
+                return "It is player 1 turn"
             } else if(playerTurn.player2 === 1 && playerTurn.player1 === 0) {
-                return "It is player two's turn"
+                return "It is player 2 turn"
             }
         }
         return { 
