@@ -297,6 +297,57 @@ const ticTacToe = (() => {
             getTurn
         }
     })()
+    const firstCell = document.querySelector('#firstCell');
+    const secondCell = document.querySelector('#secondCell');
+    const thirdCell = document.querySelector('#thirdCell');
+    const fourthCell = document.querySelector('#fourthCell');
+    const fifthCell = document.querySelector('#fifthCell');
+    const sixthCell = document.querySelector('#sixthCell');
+    const seventhCell = document.querySelector('#seventhCell');
+    const eigthCell = document.querySelector('#eigthCell');
+    const ninethCell = document.querySelector('#ninethCell');
+    firstCell.addEventListener('click', () => {
+        if(playerTurn.player1 === 1) {
+            currentPlayers[0].makingMove(1, 1);
+            firstCell.textContent = 'X';
+        }
+        else if(playerTurn.player2 === 1) {
+            currentPlayers[1].makingMove(1, 1);
+            firstCell.textContent = 'O';
+        }
+    })
+    secondCell.addEventListener('click', () => {
+        if(playerTurn.player1 === 1) {currentPlayers[0].makingMove(1, 2)}
+        else if(playerTurn.player2 === 1) {currentPlayers[1].makingMove(1, 2)}
+    })
+    thirdCell.addEventListener('click', () => {
+        if(playerTurn.player1 === 1) {currentPlayers[0].makingMove(1, 3)}
+        else if(playerTurn.player2 === 1) {currentPlayers[1].makingMove(1, 3)}
+    })
+    fourthCell.addEventListener('click', () => {
+        if(playerTurn.player1 === 1) {currentPlayers[0].makingMove(2, 1)}
+        else if(playerTurn.player2 === 1) {currentPlayers[1].makingMove(2, 1)}
+    })
+    fifthCell.addEventListener('click', () => {
+        if(playerTurn.player1 === 1) {currentPlayers[0].makingMove(2, 2)}
+        else if(playerTurn.player2 === 1) {currentPlayers[1].makingMove(2, 2)}
+    })
+    sixthCell.addEventListener('click', () => {
+        if(playerTurn.player1 === 1) {currentPlayers[0].makingMove(2, 3)}
+        else if(playerTurn.player2 === 1) {currentPlayers[1].makingMove(2, 3)}
+    })
+    seventhCell.addEventListener('click', () => {
+        if(playerTurn.player1 === 1) {currentPlayers[0].makingMove(3, 1)}
+        else if(playerTurn.player2 === 1) {currentPlayers[1].makingMove(3, 1)}
+    })
+    eigthCell.addEventListener('click', () => {
+        if(playerTurn.player1 === 1) {currentPlayers[0].makingMove(3, 2)}
+        else if(playerTurn.player2 === 1) {currentPlayers[1].makingMove(3, 2)}
+    })
+    ninethCell.addEventListener('click', () => {
+        if(playerTurn.player1 === 1) {currentPlayers[0].makingMove(3, 3)}
+        else if(playerTurn.player2 === 1) {currentPlayers[1].makingMove(3, 3)}
+    })
     return {
         currentPlayers,
         displayControl,
