@@ -317,36 +317,84 @@ const ticTacToe = (() => {
         }
     })
     secondCell.addEventListener('click', () => {
-        if(playerTurn.player1 === 1) {currentPlayers[0].makingMove(1, 2)}
-        else if(playerTurn.player2 === 1) {currentPlayers[1].makingMove(1, 2)}
+        if(playerTurn.player1 === 1) {
+            currentPlayers[0].makingMove(1, 2);
+            secondCell.textContent = 'X';
+        }
+        else if(playerTurn.player2 === 1) {
+            currentPlayers[1].makingMove(1, 2);
+            secondCell.textContent = 'O';
+        }
     })
     thirdCell.addEventListener('click', () => {
-        if(playerTurn.player1 === 1) {currentPlayers[0].makingMove(1, 3)}
-        else if(playerTurn.player2 === 1) {currentPlayers[1].makingMove(1, 3)}
+        if(playerTurn.player1 === 1) {
+            currentPlayers[0].makingMove(1, 3);
+            thirdCell.textContent = 'X';
+        }
+        else if(playerTurn.player2 === 1) {
+            currentPlayers[1].makingMove(1, 3);
+            thirdCell.textContent = 'O';
+        }
     })
     fourthCell.addEventListener('click', () => {
-        if(playerTurn.player1 === 1) {currentPlayers[0].makingMove(2, 1)}
-        else if(playerTurn.player2 === 1) {currentPlayers[1].makingMove(2, 1)}
+        if(playerTurn.player1 === 1) {
+            currentPlayers[0].makingMove(2, 1);
+            fourthCell.textContent = 'X';
+        }
+        else if(playerTurn.player2 === 1) {
+            currentPlayers[1].makingMove(2, 1);
+            fourthCell.textContent = 'O';
+        }
     })
     fifthCell.addEventListener('click', () => {
-        if(playerTurn.player1 === 1) {currentPlayers[0].makingMove(2, 2)}
-        else if(playerTurn.player2 === 1) {currentPlayers[1].makingMove(2, 2)}
+        if(playerTurn.player1 === 1) {
+            currentPlayers[0].makingMove(2, 2);
+            fifthCell.textContent = 'X';
+        }
+        else if(playerTurn.player2 === 1) {
+            currentPlayers[1].makingMove(2, 2);
+            fifthCell.textContent = 'O';
+        }
     })
     sixthCell.addEventListener('click', () => {
-        if(playerTurn.player1 === 1) {currentPlayers[0].makingMove(2, 3)}
-        else if(playerTurn.player2 === 1) {currentPlayers[1].makingMove(2, 3)}
+        if(playerTurn.player1 === 1) {
+            currentPlayers[0].makingMove(2, 3);
+            sixthCell.textContent = 'X';
+        }
+        else if(playerTurn.player2 === 1) {
+            currentPlayers[1].makingMove(2, 3);
+            sixthCell.textContent = 'O';
+        }
     })
     seventhCell.addEventListener('click', () => {
-        if(playerTurn.player1 === 1) {currentPlayers[0].makingMove(3, 1)}
-        else if(playerTurn.player2 === 1) {currentPlayers[1].makingMove(3, 1)}
+        if(playerTurn.player1 === 1) {
+            currentPlayers[0].makingMove(3, 1);
+            seventhCell.textContent = 'X';
+        }
+        else if(playerTurn.player2 === 1) {
+            currentPlayers[1].makingMove(3, 1);
+            seventhCell.textContent = 'O';
+        }
     })
     eigthCell.addEventListener('click', () => {
-        if(playerTurn.player1 === 1) {currentPlayers[0].makingMove(3, 2)}
-        else if(playerTurn.player2 === 1) {currentPlayers[1].makingMove(3, 2)}
+        if(playerTurn.player1 === 1) {
+            currentPlayers[0].makingMove(3, 2);
+            eigthCell.textContent = 'X';
+        }
+        else if(playerTurn.player2 === 1) {
+            currentPlayers[1].makingMove(3, 2);
+            eigthCell.textContent = 'O';
+        }
     })
     ninethCell.addEventListener('click', () => {
-        if(playerTurn.player1 === 1) {currentPlayers[0].makingMove(3, 3)}
-        else if(playerTurn.player2 === 1) {currentPlayers[1].makingMove(3, 3)}
+        if(playerTurn.player1 === 1) {
+            currentPlayers[0].makingMove(3, 3);
+            ninethCell.textContent = 'X';
+        }
+        else if(playerTurn.player2 === 1) {
+            currentPlayers[1].makingMove(3, 3);
+            ninethCell.textContent = 'O';
+        }
     })
     return {
         currentPlayers,

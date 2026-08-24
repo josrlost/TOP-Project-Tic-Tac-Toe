@@ -2,6 +2,8 @@
     box-sizing: border-box;
     line-height: 1.5;
     margin: auto;
+    text-align: center;
+    background-color: rgb(227, 226, 226);
 }
 
 div#ticTacToe {
@@ -19,27 +21,42 @@ div#ticTacToe > div {
 div#firstColumn > div, div#secondColumn > div, div#thirdColumn > div {
     width: 100%;
     height: 35%;
-   
+    font-size: 4rem;
 }
 
 div#firstColumn > div#firstCell, div#firstColumn > div#secondCell {
     border-bottom: 3px solid rgb(23, 22, 22);
     border-right: 3px solid rgb(23, 22, 22);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 div#firstColumn > div#thirdCell {
     border-right: 3px solid rgb(23, 22, 22);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 div#secondColumn > div#fourthCell, div#secondColumn > div#fifthCell {
     border-bottom: 3px solid rgb(23, 22, 22);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 div#thirdColumn > div#seventhCell, div#thirdColumn > div#eigthCell {
     border-bottom: 3px solid rgb(23, 22, 22);
     border-left: 3px solid rgb(23, 22, 22);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 div#thirdColumn > div#ninethCell {
     border-left: 3px solid rgb(23, 22, 22);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
