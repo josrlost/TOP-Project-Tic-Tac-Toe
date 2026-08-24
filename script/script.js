@@ -1,36 +1,52 @@
 const ticTacToe = (() => {
-    let name = '';
     let boardMoves = [];
+    let playerTurn = {
+        player1: 1,
+        player2: 0
+    }
     const gameboard = (() => {
         let board = [
             ['blank', 'first column', 'second column', 'third column'],
             ['blank', 'first row', 'second row', 'third row'],
         ];
         function makingMove (playerInputForColumn = 0, playerInputForRow = 0) {
-            let resultedMove = [];
-            resultedMove.push(board[0][playerInputForColumn]);
-            resultedMove.push(board[1][playerInputForRow]);
-            console.log(resultedMove);
-            this.totalMoves.push([resultedMove])
-            this.lastMove = resultedMove.concat();
+            if(playerTurn.player1 === 1 && playerTurn.player2 === 0 || playerTurn.player2 === 1 && playerTurn.player1 === 0) {
+                let resultedMove = [];
+                resultedMove.push(board[0][playerInputForColumn]);
+                resultedMove.push(board[1][playerInputForRow]);
+                if(this.lastMove[0] === resultedMove[0] && this.lastMove[1] === resultedMove[1]) {
+                    throw Error('You cannot make a repeated move');
+                }
+                console.log(resultedMove);
+                this.totalMoves.push([resultedMove])
+                this.lastMove = resultedMove.concat();
+                if(this.numberPlayer === 1) {
+                    playerTurn.player2 = 1;
+                    playerTurn.player1 = 0;
+                } else if(this.numberPlayer === 2) {
+                    playerTurn.player1 = 1;
+                    playerTurn.player2 = 0;
+                }
+            }
         }
         return { makingMove };
     })()
     let currentPlayers = [];
-    function createPlayer(name = '', uid = null) {
+    function createPlayer(name = '', numberPlayer = 0) {
         if(currentPlayers.length >= 2) {
             throw Error('There are already two created players')
         } else {
             const { makingMove } = gameboard;
-            uid = crypto.randomUUID();
+            let uid = crypto.randomUUID();
             let totalMoves = [];
             let lastMove = [];
             const player = {
                 name,
+                numberPlayer,
                 makingMove,
                 uid,
                 totalMoves,
-                lastMove
+                lastMove,
             };
             currentPlayers.push(player);
         }
@@ -60,8 +76,9 @@ const ticTacToe = (() => {
             let playerOneMoves = currentPlayers[0].totalMoves.concat();
             console.log(playerOneMoves);
             let playerTwoMoves = currentPlayers[1].totalMoves.concat();
+            console.log(playerTwoMoves);
             player1ProvisionalScore = 0;
-            player2ProvionalScore = 0;
+            player2ProvisionalScore = 0;
             if(playerOneMoves.length === 3) {
                 for(let [ele] of playerOneMoves) {
                     let [a, b] = ele;
@@ -255,9 +272,26 @@ const ticTacToe = (() => {
             currentScore = `${playerOneScore} - ${playerTwoScore}`;
             console.log(currentScore);
         }
+        function getWinner() {
+            if(playerOneScore >= 3) {
+                alert(`Player one won the game. Player one won ${playerOneScore} times`)
+            }
+            if(playerTwoScore >= 3) {
+                alert(`Player two won the game. Player two won ${playerTwoScore} times`)
+            }
+        }
+        function getTurn() {
+            if(playerTurn.player1 === 1 && playerTurn.player2 === 0) {
+                return "It is player one's turn"
+            } else if(playerTurn.player2 === 1 && playerTurn.player1 === 0) {
+                return "It is player two's turn"
+            }
+        }
         return { 
+            getWinner,
             getTheCurrentScore,
             setTheCurrentScore,
+            getTurn
         }
     })()
     return {
