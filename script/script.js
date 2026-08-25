@@ -1,11 +1,31 @@
 const ticTacToe = (() => {
     let boardMoves = [];
-    let player1ProvisionalScore = 0;
-    let player2ProvisionalScore = 0;
     let playerTurn = {
         player1: 1,
         player2: 0
     }
+    let provisionalScores = {
+            player1: {
+                firstColumn: 0,
+                secondColumn: 0,
+                thirdColumn: 0,
+                firstRow: 0,
+                secondRow: 0,
+                thirdRow: 0,
+                firstDiagonal: 0,
+                secondDiagonal: 0
+            },
+            player2: {
+                firstColumn: 0,
+                secondColumn: 0,
+                thirdColumn: 0,
+                firstRow: 0,
+                secondRow: 0,
+                thirdRow: 0,
+                firstDiagonal: 0,
+                secondDiagonal: 0
+            }
+        }
     const gameboard = (() => {
         let board = [
             ['blank', 'first column', 'second column', 'third column'],
@@ -71,204 +91,217 @@ const ticTacToe = (() => {
             return currentScore;
         }
         function setTheCurrentScore() {
-            let playerOneMove = currentPlayers[0].lastMove.concat();
-            console.log(playerOneMove);
-            let playerTwoMove = currentPlayers[1].lastMove.concat();
-            console.log(playerTwoMove);
-            console.log(player1ProvisionalScore);
-            let a;
-            let b;
-            [a, b] = playerOneMove;
-            let c;
-            let d;
-            [c, d] = playerTwoMove;
-            console.log(a);
-            console.log(b);
-            console.log(playerTurn.player1)
-            if(playerTurn.player1 === 1) {
+            let player1Coordinates;
+            let player2Coordinates;
+            let playe1TotalMoves;
+            let playe2TotalMoves;
+            player1Coordinates = currentPlayers[0].totalMoves.join(',');
+            player2Coordinates = currentPlayers[1].totalMoves.join(',');
+            console.log(playe1TotalMoves);
+            console.log(provisionalScores);
+            console.log(player1Coordinates);
+            console.log(player2Coordinates);
+            console.log(currentPlayers[0].lastMove);
+            console.log(currentPlayers[0].lastMove);
+            if(playerTurn.player1 === 1 && playerTurn.player2 === 0) {
                 console.log('shit');
-                switch(a && b) {
-                    case 'first column' && 'first row':
-                    case 'first column' && 'second row':
-                    case 'first column' && 'third row':
-                        player1ProvisionalScore += 1;
-                        console.log(player1ProvisionalScore);
-                        if(player1ProvisionalScore >= 3 && currentPlayers[0].totalMoves.length >= 3) {
-                            playerOneScore+=1;
-                            player1ProvisionalScore = 0;
-                            currentPlayers[0].totalMoves = [];
-                            alert('Player One won this round!')
-                        }
-                        break;
-                    case 'second column' && 'first row':
-                    case 'second column' && 'second row':
-                    case 'second column' && 'third row':
-                        player1ProvisionalScore += 1;
-                        if(player1ProvisionalScore >= 3 && currentPlayers[0].totalMoves.length >= 3) {
-                            playerOneScore+=1;
-                            player1ProvisionalScore = 0;
-                            currentPlayers[0].totalMoves = [];
-                            alert('Player One won this round!')
-                        }
-                        break;
-                    case 'third column' && 'first row':
-                    case 'third column' && 'second row':
-                    case 'third column' && 'third row':
-                        player1ProvisionalScore += 1;
-                        if(player1ProvisionalScore >= 3 && currentPlayers[0].totalMoves.length >= 3) {
-                            playerOneScore+=1;
-                            player1ProvisionalScore = 0;
-                            currentPlayers[0].totalMoves = [];
-                            alert('Player One won this round!')
-                        }
-                        break;
-                    case 'first column' && 'first row':
-                    case 'second column' && 'first row':
-                    case 'third column' && 'first row':
-                        player1ProvisionalScore += 1;
-                        if(player1ProvisionalScore >= 3 && currentPlayers[0].totalMoves.length >= 3) {
-                            playerOneScore+=1;
-                            player1ProvisionalScore = 0;
-                            currentPlayers[0].totalMoves = [];
-                            alert('Player One won this round!')
-                        }
-                        break;
-                    case 'first column' && 'second row':
-                    case 'second column' && 'second row':
-                    case 'third column' && 'second row':
-                        player1ProvisionalScore += 1;
-                        if(player1ProvisionalScore >= 3 && currentPlayers[0].totalMoves.length >= 3) {
-                            playerOneScore+=1;
-                            player1ProvisionalScore = 0;
-                            currentPlayers[0].totalMoves = [];
-                            alert('Player One won this round!')
-                        }
-                        break;
-                    case 'first column' && 'third row':
-                    case 'second column' && 'third row':
-                    case 'third column' && 'third row':
-                        player1ProvisionalScore += 1;
-                        if(player1ProvisionalScore >= 3 && currentPlayers[0].totalMoves.length >= 3) {
-                            playerOneScore+=1;
-                            player1ProvisionalScore = 0;
-                            currentPlayers[0].totalMoves = [];
-                            alert('Player One won this round!')
-                        }
-                        break;
-                    case 'first column' && 'third row':
-                    case 'second column' && 'second row':
-                    case 'third column' && 'first row':
-                        player1ProvisionalScore += 1;
-                        if(player1ProvisionalScore >= 3 && currentPlayers[0].totalMoves.length >= 3) {
-                            playerOneScore+=1;
-                            player1ProvisionalScore = 0;
-                            currentPlayers[0].totalMoves = [];
-                            alert('Player One won this round!')
-                        }
-                        break;
-                    case 'third column' && 'first row':
-                    case 'second column' && 'second row':
-                    case 'first column' && 'third row':
-                        player1ProvisionalScore += 1;
-                        if(player1ProvisionalScore >= 3 && currentPlayers[0].totalMoves.length >= 3) {
-                            playerOneScore+=1;
-                            player1ProvisionalScore = 0;
-                            currentPlayers[0].totalMoves = [];
-                            alert('Player One won this round!')
-                        }
-                        break;
+                switch(player1Coordinates) {
+                    case 'first column,first row,first column,second row,first column,third row':
+                        playerOneScore+=1;
+                        currentPlayers[0].totalMoves = [];
+                        currentPlayers[1].totalMoves = [];
+                        alert('Player One won this round!');
+                    break;
+                    case 'second column,first row,second column,second row,second column,third row':
+                        playerOneScore+=1;
+                        currentPlayers[0].totalMoves = [];
+                        currentPlayers[1].totalMoves = [];
+                        alert('Player One won this round!');
+                    break;
+                    case 'third column,first row,third column,second row,third column,third row':
+                        playerOneScore+=1;
+                        currentPlayers[0].totalMoves = [];
+                        currentPlayers[1].totalMoves = [];
+                        alert('Player One won this round!');
+                    break;
+                    case 'first column,first row,second column,first row,third column,first row':
+                        playerOneScore+=1;
+                        currentPlayers[0].totalMoves = [];
+                        currentPlayers[1].totalMoves = [];
+                        alert('Player One won this round!');
+                    break;
+                    case 'first column,second row,second column,second row,third column,second row':
+                        playerOneScore+=1;
+                        currentPlayers[0].totalMoves = [];
+                        currentPlayers[0].totalMoves = [];
+                        alert('Player One won this round!');
+                    break;
+                    case 'first column,third row,second column,third row,third column,third row':
+                        playerOneScore+=1;
+                        currentPlayers[0].totalMoves = [];
+                        currentPlayers[1].totalMoves = [];
+                        alert('Player One won this round!');
+                    break;
+                    case 'first column,third row,second column,second row,third column,first row':
+                        playerOneScore+=1;
+                        currentPlayers[0].totalMoves = [];
+                        currentPlayers[1].totalMoves = [];
+                        alert('Player One won this round!');
+                    break;
+                    case 'third column,first row,second column,second row,first column,third row':
+                        playerOneScore+=1;
+                        currentPlayers[0].totalMoves = [];
+                        currentPlayers[0].totalMoves = [];
+                        alert('Player One won this round!');
+                    break;
+                    case 'third column,third row,second column,second row,first column,first row':
+                        playerOneScore+=1;
+                        currentPlayers[0].totalMoves = [];
+                        currentPlayers[0].totalMoves = [];
+                        alert('Player One won this round!');
+                    break;
+                    case 'first column,first row,second column,second row,third column,third row':
+                        playerOneScore+=1;
+                        currentPlayers[0].totalMoves = [];
+                        currentPlayers[0].totalMoves = [];
+                        alert('Player One won this round!');
+                    break;
+                    case 'first column,third row,first column,second row,first column,first row':
+                        playerOneScore+=1;
+                        currentPlayers[0].totalMoves = [];
+                        currentPlayers[0].totalMoves = [];
+                        alert('Player One won this round!');
+                    break;
+                    case 'second column,third row,second column,second row,second column,first row':
+                        playerOneScore+=1;
+                        currentPlayers[0].totalMoves = [];
+                        currentPlayers[0].totalMoves = [];
+                        alert('Player One won this round!');
+                    break;
+                    case 'third column,third row,third column,second row,third column,first row':
+                        playerOneScore+=1;
+                        currentPlayers[0].totalMoves = [];
+                        currentPlayers[0].totalMoves = [];
+                        alert('Player One won this round!');
+                    break;
+                    case 'third column,second row,second column,second row,first column,second row':
+                        playerOneScore+=1;
+                        currentPlayers[0].totalMoves = [];
+                        currentPlayers[0].totalMoves = [];
+                        alert('Player One won this round!');
+                    break;
+                    case 'third column,third row,second column,third row,first column,third row':
+                        playerOneScore+=1;
+                        currentPlayers[0].totalMoves = [];
+                        currentPlayers[0].totalMoves = [];
+                        alert('Player One won this round!');
+                    break;
+                    case 'third column,first row,second column,first row,first column,first row':
+                        playerOneScore+=1;
+                        currentPlayers[0].totalMoves = [];
+                        currentPlayers[0].totalMoves = [];
+                        alert('Player One won this round!');
+                    break;
                 }
             }
-            else if(playerTurn.player2 === 1) {
-                switch(c && d) {
-                    case 'first column' && 'first row':
-                    case 'first column' && 'second row':
-                    case 'first column' && 'third row':
-                        player2ProvisionalScore += 1;
-                        if(player2ProvisionalScore >= 3 && currentPlayers[1].totalMoves.length >= 3) {
-                            playerTwoScore+=1;
-                            player2ProvisionalScore = 0;
-                            currentPlayers[1].totalMoves = [];
-                            alert('Player Two won this round!')
-                        }
-                        break;
-                    case 'second column' && 'first row':
-                    case 'second column' && 'second row':
-                    case 'second column' && 'third row':
-                        player2ProvisionalScore += 1;
-                        if(player2ProvisionalScore >= 3 && currentPlayers[1].totalMoves.length >= 3) {
-                            playerTwoScore+=1;
-                            player2ProvisionalScore = 0;
-                            currentPlayers[1].totalMoves = [];
-                            alert('Player Two won this round!')
-                        }
-                        break;
-                    case 'third column' && 'first row':
-                    case 'third column' && 'second row':
-                    case 'third column' && 'third row':
-                        player2ProvisionalScore += 1;
-                        if(player2ProvisionalScore >= 3 && currentPlayers[1].totalMoves.length >= 3) {
-                            playerTwoScore+=1;
-                            player2ProvisionalScore = 0;
-                            currentPlayers[1].totalMoves = [];
-                            alert('Player Two won this round!')
-                        }
-                        break;
-                    case 'first column' && 'first row':
-                    case 'second column' && 'first row':
-                    case 'third column' && 'first row':
-                        player2ProvisionalScore += 1;
-                        if(player2ProvisionalScore >= 3 && currentPlayers[1].totalMoves.length >= 3) {
-                            playerTwoScore+=1;
-                            player2ProvisionalScore = 0;
-                            currentPlayers[1].totalMoves = [];
-                            alert('Player Two won this round!')
-                        }
-                        break;
-                    case 'first column' && 'second row':
-                    case 'second column' && 'second row':
-                    case 'third column' && 'second row':
-                        player2ProvisionalScore += 1;
-                        if(player2ProvisionalScore >= 3 && currentPlayers[1].totalMoves.length >= 3) {
-                            playerTwoScore+=1;
-                            player2ProvisionalScore = 0;
-                            currentPlayers[1].totalMoves = [];
-                            alert('Player Two won this round!')
-                        }
-                        break;
-                    case 'first column' && 'third row':
-                    case 'second column' && 'third row':
-                    case 'third column' && 'third row':
-                        player2ProvisionalScore += 1;
-                        if(player2ProvisionalScore >= 3 && currentPlayers[1].totalMoves.length >= 3) {
-                            playerTwoScore+=1;
-                            player2ProvisionalScore = 0;
-                            currentPlayers[1].totalMoves = [];
-                            alert('Player Two won this round!')
-                        }
-                        break;
-                    case 'first column' && 'third row':
-                    case 'second column' && 'second row':
-                    case 'third column' && 'first row':
-                        player2ProvisionalScore += 1;
-                        if(player2ProvisionalScore >= 3 && currentPlayers[1].totalMoves.length >= 3) {
-                            playerTwoScore+=1;
-                            player2ProvisionalScore = 0;
-                            currentPlayers[1].totalMoves = [];
-                            alert('Player Two won this round!')
-                        }
-                        break;
-                    case 'third column' && 'first row':
-                    case 'second column' && 'second row':
-                    case 'first column' && 'third row':
-                        player2ProvisionalScore += 1;
-                        if(player2ProvisionalScore >= 3 && currentPlayers[1].totalMoves.length >= 3) {
-                            playerTwoScore+=1;
-                            player2ProvisionalScore = 0;
-                            currentPlayers[1].totalMoves = [];
-                            alert('Player Two won this round!')
-                        }
-                        break;
+            else if(playerTurn.player2 === 1 && playerTurn.player1 === 0) {
+                switch(player2Coordinates) {
+                    case 'first column,first row,first column,second row,first column,third row':
+                        playerTwoScore+=1;
+                        currentPlayers[1].totalMoves = [];
+                        currentPlayers[0].totalMoves = [];
+                        alert('Player Two won this round!');
+                    break;
+                    case 'second column,first row,second column,second row,second column,third row':
+                        playerTwoScore+=1;
+                        currentPlayers[1].totalMoves = [];
+                        currentPlayers[0].totalMoves = [];
+                        alert('Player Two won this round!');
+                    break;
+                    case 'third column,first row,third column,second row,third column,third row':
+                        playerTwoScore+=1;
+                        currentPlayers[1].totalMoves = [];
+                        currentPlayers[0].totalMoves = [];
+                        alert('Player Two won this round!');
+                    break;
+                    case 'first column,first row,second column,first row,third column,first row':
+                        playerTwoScore+=1;
+                        currentPlayers[1].totalMoves = [];
+                        currentPlayers[0].totalMoves = [];
+                        alert('Player Two won this round!');
+                    break;
+                    case 'first column,second row,second column,second row,third column,second row':
+                        playerTwoScore+=1;
+                        currentPlayers[0].totalMoves = [];
+                        currentPlayers[0].totalMoves = [];
+                        alert('Player Two won this round!');
+                    break;
+                    case 'first column,third row,second column,third row,third column,third row':
+                        playerTwoScore+=1;
+                        currentPlayers[0].totalMoves = [];
+                        currentPlayers[1].totalMoves = [];
+                        alert('Player Two won this round!');
+                    break;
+                    case 'first column,third row,second column,second row,third column,first row':
+                        playerTwoScore+=1;
+                        currentPlayers[0].totalMoves = [];
+                        currentPlayers[1].totalMoves = [];
+                        alert('Player Two won this round!');
+                    break;
+                    case 'third column,first row,second column,second row,first column,third row':
+                        playerOneScore+=1;
+                        currentPlayers[0].totalMoves = [];
+                        currentPlayers[0].totalMoves = [];
+                        alert('Player Two won this round!');
+                    break;
+                    case 'third column,third row,second column,second row,first column,first row':
+                        playerOneScore+=1;
+                        currentPlayers[0].totalMoves = [];
+                        currentPlayers[0].totalMoves = [];
+                        alert('Player Two won this round!');
+                    break;
+                    case 'first column,first row,second column,second row,third column,third row':
+                        playerOneScore+=1;
+                        currentPlayers[0].totalMoves = [];
+                        currentPlayers[0].totalMoves = [];
+                        alert('Player Two won this round!');
+                    break;
+                    case 'first column,third row,first column,second row,first column,first row':
+                        playerOneScore+=1;
+                        currentPlayers[0].totalMoves = [];
+                        currentPlayers[0].totalMoves = [];
+                        alert('Player Two won this round!');
+                    break;
+                    case 'second column,third row,second column,second row,second column,first row':
+                        playerOneScore+=1;
+                        currentPlayers[0].totalMoves = [];
+                        currentPlayers[0].totalMoves = [];
+                        alert('Player Two won this round!');
+                    break;
+                    case 'third column,third row,third column,second row,third column,first row':
+                        playerOneScore+=1;
+                        currentPlayers[0].totalMoves = [];
+                        currentPlayers[0].totalMoves = [];
+                        alert('Player Two won this round!');
+                    break;
+                    case 'third column,second row,second column,second row,first column,second row':
+                        playerOneScore+=1;
+                        currentPlayers[0].totalMoves = [];
+                        currentPlayers[0].totalMoves = [];
+                        alert('Player Two won this round!');
+                    break;
+                    case 'third column,third row,second column,third row,first column,third row':
+                        playerOneScore+=1;
+                        currentPlayers[0].totalMoves = [];
+                        currentPlayers[0].totalMoves = [];
+                        alert('Player Two won this round!');
+                    break;
+                    case 'third column,first row,second column,first row,first column,first row':
+                        playerOneScore+=1;
+                        currentPlayers[0].totalMoves = [];
+                        currentPlayers[0].totalMoves = [];
+                        alert('Player Two won this round!');
+                    break;
                 }
             }
             currentScore = `${playerOneScore} - ${playerTwoScore}`;
