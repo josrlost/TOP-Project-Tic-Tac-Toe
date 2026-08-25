@@ -1,5 +1,7 @@
 const ticTacToe = (() => {
     let boardMoves = [];
+    let player1ProvisionalScore = 0;
+    let player2ProvisionalScore = 0;
     let playerTurn = {
         player1: 1,
         player2: 0
@@ -20,13 +22,6 @@ const ticTacToe = (() => {
                 console.log(resultedMove);
                 this.totalMoves.push([resultedMove])
                 this.lastMove = resultedMove.concat();
-                if(this.numberPlayer === 1) {
-                    playerTurn.player2 = 1;
-                    playerTurn.player1 = 0;
-                } else if(this.numberPlayer === 2) {
-                    playerTurn.player1 = 1;
-                    playerTurn.player2 = 0;
-                }
             }
             else {
                 alert("It is not this player's turn");
@@ -76,200 +71,204 @@ const ticTacToe = (() => {
             return currentScore;
         }
         function setTheCurrentScore() {
-            let playerOneMoves = currentPlayers[0].totalMoves.concat();
-            console.log(playerOneMoves);
-            let playerTwoMoves = currentPlayers[1].totalMoves.concat();
-            console.log(playerTwoMoves);
-            player1ProvisionalScore = 0;
-            player2ProvisionalScore = 0;
-            if(playerOneMoves.length === 3) {
-                for(let [ele] of playerOneMoves) {
-                    let [a, b] = ele;
-                    switch(a && b) {
-                        case 'first column' && 'first row':
-                        case 'first column' && 'second row':
-                        case 'first column' && 'third row':
-                            player1ProvisionalScore += 1;
-                            if(player1ProvisionalScore === 3) {
-                                playerOneScore+=1;
-                                player1ProvisionalScore = 0;
-                                currentPlayers[0].totalMoves = [];
-                                alert('Player One won this round!')
-                            }
-                            break;
-                        case 'second column' && 'first row':
-                        case 'second column' && 'second row':
-                        case 'second column' && 'third row':
-                            player1ProvisionalScore += 1;
-                            if(player1ProvisionalScore === 3) {
-                                playerOneScore+=1;
-                                player1ProvisionalScore = 0;
-                                currentPlayers[0].totalMoves = [];
-                                alert('Player One won this round!')
-                            }
-                            break;
-                        case 'third column' && 'first row':
-                        case 'third column' && 'second row':
-                        case 'third column' && 'third row':
-                            player1ProvisionalScore += 1;
-                            if(player1ProvisionalScore === 3) {
-                                playerOneScore+=1;
-                                player1ProvisionalScore = 0;
-                                currentPlayers[0].totalMoves = [];
-                                alert('Player One won this round!')
-                            }
-                            break;
-                        case 'first column' && 'first row':
-                        case 'second column' && 'first row':
-                        case 'third column' && 'first row':
-                            player1ProvisionalScore += 1;
-                            if(player1ProvisionalScore === 3) {
-                                playerOneScore+=1;
-                                player1ProvisionalScore = 0;
-                                currentPlayers[0].totalMoves = [];
-                                alert('Player One won this round!')
-                            }
-                            break;
-                        case 'first column' && 'second row':
-                        case 'second column' && 'second row':
-                        case 'third column' && 'second row':
-                            player1ProvisionalScore += 1;
-                            if(player1ProvisionalScore === 3) {
-                                playerOneScore+=1;
-                                player1ProvisionalScore = 0;
-                                currentPlayers[0].totalMoves = [];
-                                alert('Player One won this round!')
-                            }
-                            break;
-                        case 'first column' && 'third row':
-                        case 'second column' && 'third row':
-                        case 'third column' && 'third row':
-                            player1ProvisionalScore += 1;
-                            if(player1ProvisionalScore === 3) {
-                                playerOneScore+=1;
-                                player1ProvisionalScore = 0;
-                                currentPlayers[0].totalMoves = [];
-                                alert('Player One won this round!')
-                            }
-                            break;
-                        case 'first column' && 'third row':
-                        case 'second column' && 'second row':
-                        case 'third column' && 'first row':
-                            player1ProvisionalScore += 1;
-                            if(player1ProvisionalScore === 3) {
-                                playerOneScore+=1;
-                                player1ProvisionalScore = 0;
-                                currentPlayers[0].totalMoves = [];
-                                alert('Player One won this round!')
-                            }
-                            break;
-                        case 'third column' && 'first row':
-                        case 'second column' && 'second row':
-                        case 'first column' && 'third row':
-                            player1ProvisionalScore += 1;
-                            if(player1ProvisionalScore === 3) {
-                                playerOneScore+=1;
-                                player1ProvisionalScore = 0;
-                                currentPlayers[0].totalMoves = [];
-                                alert('Player One won this round!')
-                            }
-                            break;
-                    }
+            let playerOneMove = currentPlayers[0].lastMove.concat();
+            console.log(playerOneMove);
+            let playerTwoMove = currentPlayers[1].lastMove.concat();
+            console.log(playerTwoMove);
+            console.log(player1ProvisionalScore);
+            let a;
+            let b;
+            [a, b] = playerOneMove;
+            let c;
+            let d;
+            [c, d] = playerTwoMove;
+            console.log(a);
+            console.log(b);
+            console.log(playerTurn.player1)
+            if(playerTurn.player1 === 1) {
+                console.log('shit');
+                switch(a && b) {
+                    case 'first column' && 'first row':
+                    case 'first column' && 'second row':
+                    case 'first column' && 'third row':
+                        player1ProvisionalScore += 1;
+                        console.log(player1ProvisionalScore);
+                        if(player1ProvisionalScore >= 3 && currentPlayers[0].totalMoves.length >= 3) {
+                            playerOneScore+=1;
+                            player1ProvisionalScore = 0;
+                            currentPlayers[0].totalMoves = [];
+                            alert('Player One won this round!')
+                        }
+                        break;
+                    case 'second column' && 'first row':
+                    case 'second column' && 'second row':
+                    case 'second column' && 'third row':
+                        player1ProvisionalScore += 1;
+                        if(player1ProvisionalScore >= 3 && currentPlayers[0].totalMoves.length >= 3) {
+                            playerOneScore+=1;
+                            player1ProvisionalScore = 0;
+                            currentPlayers[0].totalMoves = [];
+                            alert('Player One won this round!')
+                        }
+                        break;
+                    case 'third column' && 'first row':
+                    case 'third column' && 'second row':
+                    case 'third column' && 'third row':
+                        player1ProvisionalScore += 1;
+                        if(player1ProvisionalScore >= 3 && currentPlayers[0].totalMoves.length >= 3) {
+                            playerOneScore+=1;
+                            player1ProvisionalScore = 0;
+                            currentPlayers[0].totalMoves = [];
+                            alert('Player One won this round!')
+                        }
+                        break;
+                    case 'first column' && 'first row':
+                    case 'second column' && 'first row':
+                    case 'third column' && 'first row':
+                        player1ProvisionalScore += 1;
+                        if(player1ProvisionalScore >= 3 && currentPlayers[0].totalMoves.length >= 3) {
+                            playerOneScore+=1;
+                            player1ProvisionalScore = 0;
+                            currentPlayers[0].totalMoves = [];
+                            alert('Player One won this round!')
+                        }
+                        break;
+                    case 'first column' && 'second row':
+                    case 'second column' && 'second row':
+                    case 'third column' && 'second row':
+                        player1ProvisionalScore += 1;
+                        if(player1ProvisionalScore >= 3 && currentPlayers[0].totalMoves.length >= 3) {
+                            playerOneScore+=1;
+                            player1ProvisionalScore = 0;
+                            currentPlayers[0].totalMoves = [];
+                            alert('Player One won this round!')
+                        }
+                        break;
+                    case 'first column' && 'third row':
+                    case 'second column' && 'third row':
+                    case 'third column' && 'third row':
+                        player1ProvisionalScore += 1;
+                        if(player1ProvisionalScore >= 3 && currentPlayers[0].totalMoves.length >= 3) {
+                            playerOneScore+=1;
+                            player1ProvisionalScore = 0;
+                            currentPlayers[0].totalMoves = [];
+                            alert('Player One won this round!')
+                        }
+                        break;
+                    case 'first column' && 'third row':
+                    case 'second column' && 'second row':
+                    case 'third column' && 'first row':
+                        player1ProvisionalScore += 1;
+                        if(player1ProvisionalScore >= 3 && currentPlayers[0].totalMoves.length >= 3) {
+                            playerOneScore+=1;
+                            player1ProvisionalScore = 0;
+                            currentPlayers[0].totalMoves = [];
+                            alert('Player One won this round!')
+                        }
+                        break;
+                    case 'third column' && 'first row':
+                    case 'second column' && 'second row':
+                    case 'first column' && 'third row':
+                        player1ProvisionalScore += 1;
+                        if(player1ProvisionalScore >= 3 && currentPlayers[0].totalMoves.length >= 3) {
+                            playerOneScore+=1;
+                            player1ProvisionalScore = 0;
+                            currentPlayers[0].totalMoves = [];
+                            alert('Player One won this round!')
+                        }
+                        break;
                 }
             }
-            if(playerTwoMoves.length === 3) {
-                for(let [ele] of playerTwoMoves) {
-                    let [a, b] = ele;
-                    switch(a && b) {
-                        case 'first column' && 'first row':
-                        case 'first column' && 'second row':
-                        case 'first column' && 'third row':
-                            player2ProvisionalScore += 1;
-                            if(player2ProvisionalScore === 3) {
-                                playerTwoScore+=1;
-                                player2ProvisionalScore = 0;
-                                currentPlayers[1].totalMoves = [];
-                                alert('Player Two won this round!')
-                            }
-                            break;
-                        case 'second column' && 'first row':
-                        case 'second column' && 'second row':
-                        case 'second column' && 'third row':
-                            player2ProvisionalScore += 1;
-                            if(player2ProvisionalScore === 3) {
-                                playerTwoScore+=1;
-                                player2ProvisionalScore = 0;
-                                currentPlayers[1].totalMoves = [];
-                                alert('Player Two won this round!')
-                            }
-                            break;
-                        case 'third column' && 'first row':
-                        case 'third column' && 'second row':
-                        case 'third column' && 'third row':
-                            player2ProvisionalScore += 1;
-                            if(player2ProvisionalScore === 3) {
-                                playerTwoScore+=1;
-                                player2ProvisionalScore = 0;
-                                currentPlayers[1].totalMoves = [];
-                                alert('Player Two won this round!')
-                            }
-                            break;
-                        case 'first column' && 'first row':
-                        case 'second column' && 'first row':
-                        case 'third column' && 'first row':
-                            player2ProvisionalScore += 1;
-                            if(player2ProvisionalScore === 3) {
-                                playerTwoScore+=1;
-                                player2ProvisionalScore = 0;
-                                currentPlayers[1].totalMoves = [];
-                                alert('Player Two won this round!')
-                            }
-                            break;
-                        case 'first column' && 'second row':
-                        case 'second column' && 'second row':
-                        case 'third column' && 'second row':
-                            player2ProvisionalScore += 1;
-                            if(player2ProvisionalScore === 3) {
-                                playerTwoScore+=1;
-                                player2ProvisionalScore = 0;
-                                currentPlayers[1].totalMoves = [];
-                                alert('Player Two won this round!')
-                            }
-                            break;
-                        case 'first column' && 'third row':
-                        case 'second column' && 'third row':
-                        case 'third column' && 'third row':
-                            player2ProvisionalScore += 1;
-                            if(player2ProvisionalScore === 3) {
-                                playerTwoScore+=1;
-                                player2ProvisionalScore = 0;
-                                currentPlayers[1].totalMoves = [];
-                                alert('Player Two won this round!')
-                            }
-                            break;
-                        case 'first column' && 'third row':
-                        case 'second column' && 'second row':
-                        case 'third column' && 'first row':
-                            player2ProvisionalScore += 1;
-                            if(player2ProvisionalScore === 3) {
-                                playerTwoScore+=1;
-                                player2ProvisionalScore = 0;
-                                currentPlayers[1].totalMoves = [];
-                                alert('Player Two won this round!')
-                            }
-                            break;
-                        case 'third column' && 'first row':
-                        case 'second column' && 'second row':
-                        case 'first column' && 'third row':
-                            player2ProvisionalScore += 1;
-                            if(player2ProvisionalScore === 3) {
-                                playerTwoScore+=1;
-                                player2ProvisionalScore = 0;
-                                currentPlayers[1].totalMoves = [];
-                                alert('Player Two won this round!')
-                            }
-                            break;
-                    }
+            else if(playerTurn.player2 === 1) {
+                switch(c && d) {
+                    case 'first column' && 'first row':
+                    case 'first column' && 'second row':
+                    case 'first column' && 'third row':
+                        player2ProvisionalScore += 1;
+                        if(player2ProvisionalScore >= 3 && currentPlayers[1].totalMoves.length >= 3) {
+                            playerTwoScore+=1;
+                            player2ProvisionalScore = 0;
+                            currentPlayers[1].totalMoves = [];
+                            alert('Player Two won this round!')
+                        }
+                        break;
+                    case 'second column' && 'first row':
+                    case 'second column' && 'second row':
+                    case 'second column' && 'third row':
+                        player2ProvisionalScore += 1;
+                        if(player2ProvisionalScore >= 3 && currentPlayers[1].totalMoves.length >= 3) {
+                            playerTwoScore+=1;
+                            player2ProvisionalScore = 0;
+                            currentPlayers[1].totalMoves = [];
+                            alert('Player Two won this round!')
+                        }
+                        break;
+                    case 'third column' && 'first row':
+                    case 'third column' && 'second row':
+                    case 'third column' && 'third row':
+                        player2ProvisionalScore += 1;
+                        if(player2ProvisionalScore >= 3 && currentPlayers[1].totalMoves.length >= 3) {
+                            playerTwoScore+=1;
+                            player2ProvisionalScore = 0;
+                            currentPlayers[1].totalMoves = [];
+                            alert('Player Two won this round!')
+                        }
+                        break;
+                    case 'first column' && 'first row':
+                    case 'second column' && 'first row':
+                    case 'third column' && 'first row':
+                        player2ProvisionalScore += 1;
+                        if(player2ProvisionalScore >= 3 && currentPlayers[1].totalMoves.length >= 3) {
+                            playerTwoScore+=1;
+                            player2ProvisionalScore = 0;
+                            currentPlayers[1].totalMoves = [];
+                            alert('Player Two won this round!')
+                        }
+                        break;
+                    case 'first column' && 'second row':
+                    case 'second column' && 'second row':
+                    case 'third column' && 'second row':
+                        player2ProvisionalScore += 1;
+                        if(player2ProvisionalScore >= 3 && currentPlayers[1].totalMoves.length >= 3) {
+                            playerTwoScore+=1;
+                            player2ProvisionalScore = 0;
+                            currentPlayers[1].totalMoves = [];
+                            alert('Player Two won this round!')
+                        }
+                        break;
+                    case 'first column' && 'third row':
+                    case 'second column' && 'third row':
+                    case 'third column' && 'third row':
+                        player2ProvisionalScore += 1;
+                        if(player2ProvisionalScore >= 3 && currentPlayers[1].totalMoves.length >= 3) {
+                            playerTwoScore+=1;
+                            player2ProvisionalScore = 0;
+                            currentPlayers[1].totalMoves = [];
+                            alert('Player Two won this round!')
+                        }
+                        break;
+                    case 'first column' && 'third row':
+                    case 'second column' && 'second row':
+                    case 'third column' && 'first row':
+                        player2ProvisionalScore += 1;
+                        if(player2ProvisionalScore >= 3 && currentPlayers[1].totalMoves.length >= 3) {
+                            playerTwoScore+=1;
+                            player2ProvisionalScore = 0;
+                            currentPlayers[1].totalMoves = [];
+                            alert('Player Two won this round!')
+                        }
+                        break;
+                    case 'third column' && 'first row':
+                    case 'second column' && 'second row':
+                    case 'first column' && 'third row':
+                        player2ProvisionalScore += 1;
+                        if(player2ProvisionalScore >= 3 && currentPlayers[1].totalMoves.length >= 3) {
+                            playerTwoScore+=1;
+                            player2ProvisionalScore = 0;
+                            currentPlayers[1].totalMoves = [];
+                            alert('Player Two won this round!')
+                        }
+                        break;
                 }
             }
             currentScore = `${playerOneScore} - ${playerTwoScore}`;
@@ -290,11 +289,21 @@ const ticTacToe = (() => {
                 return "It is player 2 turn"
             }
         }
+        function setTurn() {
+            if(playerTurn.player1 === 1) {
+                playerTurn.player1 = 0;
+                playerTurn.player2 = 1;
+            } else if(playerTurn.player2 === 1) {
+                playerTurn.player2 = 0;
+                playerTurn.player1 = 1;
+            }
+        }
         return { 
             getWinner,
             getTheCurrentScore,
             setTheCurrentScore,
-            getTurn
+            getTurn,
+            setTurn
         }
     })()
     const firstCell = document.querySelector('#firstCell');
@@ -310,90 +319,126 @@ const ticTacToe = (() => {
         if(playerTurn.player1 === 1) {
             currentPlayers[0].makingMove(1, 1);
             firstCell.textContent = 'X';
+            displayControl.setTheCurrentScore();
+            displayControl.setTurn();
         }
         else if(playerTurn.player2 === 1) {
             currentPlayers[1].makingMove(1, 1);
             firstCell.textContent = 'O';
+            displayControl.setTheCurrentScore();
+            displayControl.setTurn();
         }
     })
     secondCell.addEventListener('click', () => {
         if(playerTurn.player1 === 1) {
             currentPlayers[0].makingMove(1, 2);
             secondCell.textContent = 'X';
+            displayControl.setTheCurrentScore();
+            displayControl.setTurn();
         }
         else if(playerTurn.player2 === 1) {
             currentPlayers[1].makingMove(1, 2);
             secondCell.textContent = 'O';
+            displayControl.setTheCurrentScore();
+            displayControl.setTurn();
         }
     })
     thirdCell.addEventListener('click', () => {
         if(playerTurn.player1 === 1) {
             currentPlayers[0].makingMove(1, 3);
             thirdCell.textContent = 'X';
+            displayControl.setTheCurrentScore();
+            displayControl.setTurn();
         }
         else if(playerTurn.player2 === 1) {
             currentPlayers[1].makingMove(1, 3);
             thirdCell.textContent = 'O';
+            displayControl.setTheCurrentScore();
+            displayControl.setTurn();
         }
     })
     fourthCell.addEventListener('click', () => {
         if(playerTurn.player1 === 1) {
             currentPlayers[0].makingMove(2, 1);
             fourthCell.textContent = 'X';
+            displayControl.setTheCurrentScore();
+            displayControl.setTurn();
         }
         else if(playerTurn.player2 === 1) {
             currentPlayers[1].makingMove(2, 1);
             fourthCell.textContent = 'O';
+            displayControl.setTheCurrentScore();
+            displayControl.setTurn();
         }
     })
     fifthCell.addEventListener('click', () => {
         if(playerTurn.player1 === 1) {
             currentPlayers[0].makingMove(2, 2);
             fifthCell.textContent = 'X';
+            displayControl.setTheCurrentScore();
+            displayControl.setTurn();
         }
         else if(playerTurn.player2 === 1) {
             currentPlayers[1].makingMove(2, 2);
             fifthCell.textContent = 'O';
+            displayControl.setTheCurrentScore();
+            displayControl.setTurn();
         }
     })
     sixthCell.addEventListener('click', () => {
         if(playerTurn.player1 === 1) {
             currentPlayers[0].makingMove(2, 3);
             sixthCell.textContent = 'X';
+            displayControl.setTheCurrentScore();
+            displayControl.setTurn();
         }
         else if(playerTurn.player2 === 1) {
             currentPlayers[1].makingMove(2, 3);
             sixthCell.textContent = 'O';
+            displayControl.setTheCurrentScore();
+            displayControl.setTurn();
         }
     })
     seventhCell.addEventListener('click', () => {
         if(playerTurn.player1 === 1) {
             currentPlayers[0].makingMove(3, 1);
             seventhCell.textContent = 'X';
+            displayControl.setTheCurrentScore();
+            displayControl.setTurn();
         }
         else if(playerTurn.player2 === 1) {
             currentPlayers[1].makingMove(3, 1);
             seventhCell.textContent = 'O';
+            displayControl.setTheCurrentScore();
+            displayControl.setTurn();
         }
     })
     eigthCell.addEventListener('click', () => {
         if(playerTurn.player1 === 1) {
             currentPlayers[0].makingMove(3, 2);
             eigthCell.textContent = 'X';
+            displayControl.setTheCurrentScore();
+            displayControl.setTurn();
         }
         else if(playerTurn.player2 === 1) {
             currentPlayers[1].makingMove(3, 2);
             eigthCell.textContent = 'O';
+            displayControl.setTheCurrentScore();
+            displayControl.setTurn();
         }
     })
     ninethCell.addEventListener('click', () => {
         if(playerTurn.player1 === 1) {
             currentPlayers[0].makingMove(3, 3);
             ninethCell.textContent = 'X';
+            displayControl.setTheCurrentScore();
+            displayControl.setTurn();
         }
         else if(playerTurn.player2 === 1) {
             currentPlayers[1].makingMove(3, 3);
             ninethCell.textContent = 'O';
+            displayControl.setTheCurrentScore();
+            displayControl.setTurn();
         }
     })
     return {
