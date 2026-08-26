@@ -404,8 +404,18 @@ const ticTacToe = (() => {
                         if(playerOneScore === 1 || playerTwoScore === 1) {cleanBoard();};
                     break;
                 }
+            if(player1Coordinates === 'second column,first row,second column,second row,third column,second row,first column,third row' &&
+                player2Coordinates === 'second column,first row,second column,second row,third column,second row,first column,third row') 
+                {
+                    currentPlayers[0].totalMoves = [];
+                    currentPlayers[1].totalMoves = [];
+                    resetProvisionalScore();
+                    cleanBoard();
+                    alert("It's a draw");
+            }
             }
             currentScore = `${playerOneScore} - ${playerTwoScore}`;
+            trackVictories();
         }
         function getWinner() {
             if(playerOneScore >= 3) {
@@ -432,10 +442,46 @@ const ticTacToe = (() => {
             }
         }
         function trackVictories() {
-            switch(playerOneScore) {
-                case 1:
-
-            }
+           if(currentPlayers[0].playerPoint === 0 && playerOneScore === 1) {
+                fiveRounds.player1.firstRound = 1;
+                fiveRounds.player2.firstRound = 0;
+           }
+           else if(currentPlayers[1].playerPoint === 0 && playerTwoScore === 1) {
+                fiveRounds.player1.firstRound = 0;
+                fiveRounds.player2.firstRound = 1;
+           }
+           if(fiveRounds.player1.firstRound === 1 && fiveRounds.player2.firstRound === 0) {
+                fiveRounds.player1.secondRound = 1;
+                fiveRounds.player2.secondRound = 0;
+           }
+           else if(fiveRounds.player2.firstRound === 1 && fiveRounds.player1.firstRound === 0) {
+                fiveRounds.player2.secondRound = 1;
+                fiveRounds.player1.secondRound = 0;
+           }
+           if(fiveRounds.player1.secondRound === 1 && fiveRounds.player2.secondRound === 0) {
+                fiveRounds.player1.thirdRound = 1;
+                fiveRounds.player2.thirdRound = 0;
+           }
+           else if(fiveRounds.player2.secondRound === 1 && fiveRounds.player1.secondRound === 0) {
+                fiveRounds.player2.thirdRound = 1;
+                fiveRounds.player1.thirdRound = 0;
+           }
+           if(fiveRounds.player1.thirdRound === 1 && fiveRounds.player2.thirdRound === 0) {
+                fiveRounds.player1.fourthRound = 1;
+                fiveRounds.player2.fourthRound = 0;
+           }
+           else if(fiveRounds.player2.thirdRound === 1 && fiveRounds.player1.thirdRound === 0) {
+                fiveRounds.player2.fourthRound = 1;
+                fiveRounds.player1.fourthRound = 0;
+           }
+           if(fiveRounds.player1.fourthRound === 1 && fiveRounds.player2.fourthRound === 0) {
+                fiveRounds.player1.fifthRound = 1;
+                fiveRounds.player2.fifthRound = 0;
+           }
+           else if(fiveRounds.player2.fourthRound === 1 && fiveRounds.player1.fourthRound === 0) {
+                fiveRounds.player2.fifthRound = 1;
+                fiveRounds.player1.fifthRound = 0;
+           }
         }
         return { 
             getWinner,
@@ -443,7 +489,6 @@ const ticTacToe = (() => {
             setTheCurrentScore,
             getTurn,
             setTurn,
-            trackVictories
         }
     })()
     const firstCell = document.querySelector('#firstCell');
@@ -623,6 +668,19 @@ const ticTacToe = (() => {
         playerOneScore = 0;
         playerTwoScore = 0;
     }
+    const createPlayerBtn = document.querySelector("#createPlayerBtn");
+    const modifyPlayerBtn = document.querySelector("#mdofiyPlayerBtn");
+    const restartGameBtn = document.querySelector("#restartGameBtn");
+    const dialog = document.querySelector("#createPlayerDialog");
+    createPlayerBtn.addEventListener("click", () => {
+        dialog.showModal();
+    })
+    modifyPlayerBtn.addEventListener("click", () => {
+
+    })
+    restartGameBtn.addEventListener("click", () => {
+
+    })
     return {
         currentPlayers,
         displayControl,
@@ -632,5 +690,3 @@ const ticTacToe = (() => {
     }
 }
 )()
-
-console.log(ticTacToe);

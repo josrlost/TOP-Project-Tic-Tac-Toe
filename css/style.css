@@ -84,6 +84,17 @@ div#informationalBar {
     background-color: black;
     opacity: 0.8;
     width: 100vw;
-    height: 45vh;
+    height: 31vh;
     margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+div#informationalBar > div {
+    background-color: rgb(1, 6, 0);
+    height: 98%;
+    width: 30%;
+    border: 1px solid rgba(148, 147, 147, 0.753);
+    color: rgb(250, 205, 41);
 }
