@@ -3,7 +3,13 @@
     line-height: 1.5;
     margin: auto;
     text-align: center;
-    background-color: rgb(227, 226, 226);
+    background-color: rgb(241, 232, 232);
+    
+}
+
+body {
+    display: flex;
+    flex-flow: column;
 }
 
 div#ticTacToe {
@@ -46,6 +52,13 @@ div#secondColumn > div#fourthCell, div#secondColumn > div#fifthCell {
     align-items: center;
 }
 
+div#secondColumn > div#sixthCell {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
 div#thirdColumn > div#seventhCell, div#thirdColumn > div#eigthCell {
     border-bottom: 3px solid rgb(23, 22, 22);
     border-left: 3px solid rgb(23, 22, 22);
@@ -59,4 +72,18 @@ div#thirdColumn > div#ninethCell {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+div#btns {
+    display: flex;
+    margin-top: 50px;
+    gap: 5px;
+}
+
+div#informationalBar {
+    background-color: black;
+    opacity: 0.8;
+    width: 100vw;
+    height: 45vh;
+    margin-top: 10px;
 }

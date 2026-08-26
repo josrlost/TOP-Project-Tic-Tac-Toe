@@ -35,7 +35,6 @@ const ticTacToe = (() => {
                 if(this.lastMove[0] === resultedMove[0] && this.lastMove[1] === resultedMove[1]) {
                     throw Error('You cannot make a repeated move');
                 }
-                console.log(resultedMove);
                 this.totalMoves.push([resultedMove])
                 this.lastMove = resultedMove.concat();
             }
@@ -93,6 +92,7 @@ const ticTacToe = (() => {
             let player2Coordinates;
             player1Coordinates = currentPlayers[0].totalMoves.join(',');
             player2Coordinates = currentPlayers[1].totalMoves.join(',');
+            console.log(player2Coordinates);
             if(playerTurn.player1 === 1 && playerTurn.player2 === 0) {
                 switch(player1Coordinates) {
                     case 'first column,first row,first column,second row,first column,third row':
@@ -216,6 +216,30 @@ const ticTacToe = (() => {
                         if(playerOneScore === 1 || playerTwoScore === 1) {cleanBoard();};
                     break;
                     case 'third column,first row,second column,first row,first column,first row':
+                        playerOneScore = 1;
+                        currentPlayers[0].totalMoves = [];
+                        currentPlayers[1].totalMoves = [];
+                        currentPlayers[0].playerPoint += 1;
+                        alert('Player One won this round!');
+                        if(playerOneScore === 1 || playerTwoScore === 1) {cleanBoard();};
+                    break;
+                    case 'first column,second row,second column,first row,second column,second row,third column,second row':
+                        playerOneScore = 1;
+                        currentPlayers[0].totalMoves = [];
+                        currentPlayers[1].totalMoves = [];
+                        currentPlayers[0].playerPoint += 1;
+                        alert('Player One won this round!');
+                        if(playerOneScore === 1 || playerTwoScore === 1) {cleanBoard();};
+                    break;
+                    case 'second column,first row,first column,second row,second column,third row':
+                        playerOneScore = 1;
+                        currentPlayers[0].totalMoves = [];
+                        currentPlayers[1].totalMoves = [];
+                        currentPlayers[0].playerPoint += 1;
+                        alert('Player One won this round!');
+                        if(playerOneScore === 1 || playerTwoScore === 1) {cleanBoard();};
+                    break;
+                    case 'first column,second row,second column,second row,third column,third row,first column,first row':
                         playerOneScore = 1;
                         currentPlayers[0].totalMoves = [];
                         currentPlayers[1].totalMoves = [];
@@ -355,6 +379,30 @@ const ticTacToe = (() => {
                         alert('Player Two won this round!');
                         if(playerOneScore === 1 || playerTwoScore === 1) {cleanBoard();};
                     break;
+                    case 'first column,second row,second column,first row,second column,second row,third column,second row':
+                        playerTwoScore = 1;
+                        currentPlayers[0].totalMoves = [];
+                        currentPlayers[1].totalMoves = [];
+                        currentPlayers[1].playerPoint += 1;
+                        alert('Player Two won this round!');
+                        if(playerOneScore === 1 || playerTwoScore === 1) {cleanBoard();};
+                    break;
+                    case 'second column,first row,first column,second row,second column,third row':
+                        playerTwoScore = 1;
+                        currentPlayers[0].totalMoves = [];
+                        currentPlayers[1].totalMoves = [];
+                        currentPlayers[1].playerPoint += 1;
+                        alert('Player Two won this round!');
+                        if(playerOneScore === 1 || playerTwoScore === 1) {cleanBoard();};
+                    break;
+                    case 'first column,second row,second column,second row,third column,third row,first column,first row':
+                        playerTwoScore = 1;
+                        currentPlayers[0].totalMoves = [];
+                        currentPlayers[1].totalMoves = [];
+                        currentPlayers[1].playerPoint += 1;
+                        alert('Player Two won this round!');
+                        if(playerOneScore === 1 || playerTwoScore === 1) {cleanBoard();};
+                    break;
                 }
             }
             currentScore = `${playerOneScore} - ${playerTwoScore}`;
@@ -409,14 +457,16 @@ const ticTacToe = (() => {
     const ninethCell = document.querySelector('#ninethCell');
     firstCell.addEventListener('click', () => {
         if(playerTurn.player1 === 1) {
-            currentPlayers[0].makingMove(1, 1);
             firstCell.textContent = 'X';
+            firstCell.style.color = 'red';
+            currentPlayers[0].makingMove(1, 1);
             displayControl.setTheCurrentScore();
             displayControl.setTurn();
         }
         else if(playerTurn.player2 === 1) {
-            currentPlayers[1].makingMove(1, 1);
             firstCell.textContent = 'O';
+            firstCell.style.color = 'green';
+            currentPlayers[1].makingMove(1, 1);
             displayControl.setTheCurrentScore();
             displayControl.setTurn();
         }
@@ -424,14 +474,16 @@ const ticTacToe = (() => {
     })
     secondCell.addEventListener('click', () => {
         if(playerTurn.player1 === 1) {
-            currentPlayers[0].makingMove(1, 2);
             secondCell.textContent = 'X';
+            secondCell.style.color = 'red';
+            currentPlayers[0].makingMove(1, 2);
             displayControl.setTheCurrentScore();
             displayControl.setTurn();
         }
         else if(playerTurn.player2 === 1) {
-            currentPlayers[1].makingMove(1, 2);
             secondCell.textContent = 'O';
+            secondCell.style.color = 'green';
+            currentPlayers[1].makingMove(1, 2);
             displayControl.setTheCurrentScore();
             displayControl.setTurn();
         }
@@ -439,14 +491,16 @@ const ticTacToe = (() => {
     })
     thirdCell.addEventListener('click', () => {
         if(playerTurn.player1 === 1) {
-            currentPlayers[0].makingMove(1, 3);
             thirdCell.textContent = 'X';
+            thirdCell.style.color = 'red';
+            currentPlayers[0].makingMove(1, 3);
             displayControl.setTheCurrentScore();
             displayControl.setTurn();
         }
         else if(playerTurn.player2 === 1) {
-            currentPlayers[1].makingMove(1, 3);
             thirdCell.textContent = 'O';
+            thirdCell.style.color = 'green';
+            currentPlayers[1].makingMove(1, 3);
             displayControl.setTheCurrentScore();
             displayControl.setTurn();
         }
@@ -454,14 +508,16 @@ const ticTacToe = (() => {
     })
     fourthCell.addEventListener('click', () => {
         if(playerTurn.player1 === 1) {
-            currentPlayers[0].makingMove(2, 1);
             fourthCell.textContent = 'X';
+            fourthCell.style.color = 'red';
+            currentPlayers[0].makingMove(2, 1);
             displayControl.setTheCurrentScore();
             displayControl.setTurn();
         }
         else if(playerTurn.player2 === 1) {
-            currentPlayers[1].makingMove(2, 1);
             fourthCell.textContent = 'O';
+            fourthCell.style.color = 'green';
+            currentPlayers[1].makingMove(2, 1);
             displayControl.setTheCurrentScore();
             displayControl.setTurn();
         }
@@ -469,14 +525,16 @@ const ticTacToe = (() => {
     })
     fifthCell.addEventListener('click', () => {
         if(playerTurn.player1 === 1) {
-            currentPlayers[0].makingMove(2, 2);
             fifthCell.textContent = 'X';
+            fifthCell.style.color = 'red';
+            currentPlayers[0].makingMove(2, 2);
             displayControl.setTheCurrentScore();
             displayControl.setTurn();
         }
         else if(playerTurn.player2 === 1) {
-            currentPlayers[1].makingMove(2, 2);
             fifthCell.textContent = 'O';
+            fifthCell.style.color = 'green';
+            currentPlayers[1].makingMove(2, 2);
             displayControl.setTheCurrentScore();
             displayControl.setTurn();
         }
@@ -484,14 +542,16 @@ const ticTacToe = (() => {
     })
     sixthCell.addEventListener('click', () => {
         if(playerTurn.player1 === 1) {
-            currentPlayers[0].makingMove(2, 3);
             sixthCell.textContent = 'X';
+            sixthCell.style.color = 'red';            
+            currentPlayers[0].makingMove(2, 3);
             displayControl.setTheCurrentScore();
             displayControl.setTurn();
         }
         else if(playerTurn.player2 === 1) {
-            currentPlayers[1].makingMove(2, 3);
             sixthCell.textContent = 'O';
+            sixthCell.style.color = 'green';            
+            currentPlayers[1].makingMove(2, 3);
             displayControl.setTheCurrentScore();
             displayControl.setTurn();
         }
@@ -499,14 +559,16 @@ const ticTacToe = (() => {
     })
     seventhCell.addEventListener('click', () => {
         if(playerTurn.player1 === 1) {
-            currentPlayers[0].makingMove(3, 1);
             seventhCell.textContent = 'X';
+            seventhCell.style.color = 'red';
+            currentPlayers[0].makingMove(3, 1);
             displayControl.setTheCurrentScore();
             displayControl.setTurn();
         }
         else if(playerTurn.player2 === 1) {
-            currentPlayers[1].makingMove(3, 1);
             seventhCell.textContent = 'O';
+            seventhCell.style.color = 'green';
+            currentPlayers[1].makingMove(3, 1);
             displayControl.setTheCurrentScore();
             displayControl.setTurn();
         }
@@ -514,14 +576,16 @@ const ticTacToe = (() => {
     })
     eigthCell.addEventListener('click', () => {
         if(playerTurn.player1 === 1) {
-            currentPlayers[0].makingMove(3, 2);
             eigthCell.textContent = 'X';
+            eigthCell.style.color = 'red';
+            currentPlayers[0].makingMove(3, 2);
             displayControl.setTheCurrentScore();
             displayControl.setTurn();
         }
         else if(playerTurn.player2 === 1) {
-            currentPlayers[1].makingMove(3, 2);
             eigthCell.textContent = 'O';
+            eigthCell.style.color = 'green';
+            currentPlayers[1].makingMove(3, 2);
             displayControl.setTheCurrentScore();
             displayControl.setTurn();
         }
@@ -529,14 +593,16 @@ const ticTacToe = (() => {
     })
     ninethCell.addEventListener('click', () => {
         if(playerTurn.player1 === 1) {
-            currentPlayers[0].makingMove(3, 3);
             ninethCell.textContent = 'X';
+            ninethCell.style.color = 'red';
+            currentPlayers[0].makingMove(3, 3);
             displayControl.setTheCurrentScore();
             displayControl.setTurn();
         }
         else if(playerTurn.player2 === 1) {
-            currentPlayers[1].makingMove(3, 3);
             ninethCell.textContent = 'O';
+            ninethCell.style.color = 'green';
+            currentPlayers[1].makingMove(3, 3);
             displayControl.setTheCurrentScore();
             displayControl.setTurn();
         }
