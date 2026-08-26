@@ -92,9 +92,42 @@ div#informationalBar {
 }
 
 div#informationalBar > div {
-    background-color: rgb(1, 6, 0);
+    background-color: rgba(1, 4, 0, 0.765);
     height: 98%;
     width: 30%;
     border: 1px solid rgba(148, 147, 147, 0.753);
-    color: rgb(250, 205, 41);
+    color: rgb(249, 221, 120);
+}
+
+button {
+    border-radius: 10px;
+    border: 1px solid rgb(114, 119, 115);
+    background-color: rgba(14, 27, 1, 0.303);
+    box-shadow: 1px 1px 2px rgb(0, 10, 6);
+    color: rgb(228, 228, 228);
+    font-weight: bold;
+}
+
+form {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 5px;
+}
+
+dialog {
+    border: 1px solid black;
+}
+
+dialog#createPlayerDialog input {
+    border: 1px solid black;
+}
+
+#informationalBarContent {
+    display: flex;
+    overflow: hidden;
+}
+
+#informationalBarContent > div {
+    display: flex;
+    flex-flow: column nowrap;
 }

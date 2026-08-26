@@ -1,7 +1,6 @@
 const ticTacToe = (() => {
-    let boardMoves = [];
     let playerTurn = {
-        player1: 1,
+        player1: 0,
         player2: 0
     }
     let playerOneScore = 0;
@@ -28,6 +27,7 @@ const ticTacToe = (() => {
             ['blank', 'first row', 'second row', 'third row'],
         ];
         function makingMove (playerInputForColumn = 0, playerInputForRow = 0) {
+            if(currentPlayers.length <= 0) {alert('Create two players to start the game')};
             if(playerTurn.player1 === 1 && playerTurn.player2 === 0 && this.numberPlayer === 1 || playerTurn.player2 === 1 && playerTurn.player1 === 0 && this.numberPlayer === 2) {
                 let resultedMove = [];
                 resultedMove.push(board[0][playerInputForColumn]);
@@ -64,10 +64,27 @@ const ticTacToe = (() => {
                 playerPoint
             };
             currentPlayers.push(player);
+            playerTurn.player1 = 1;
         }
     }
     function resetPlayer() {
         currentPlayers.splice(0, 2);
+    }
+    function resetGame() {
+        playerTurn.player1 = 0;
+        playerTurn.player2 = 0;
+        fiveRounds.player1.firstRound = 0;
+        fiveRounds.player1.secondRound = 0;
+        fiveRounds.player1.thirdRound = 0;
+        fiveRounds.player1.fourthRound = 0;
+        fiveRounds.player1.fifthRound = 0;
+        fiveRounds.player2.firstRound = 0;
+        fiveRounds.player2.secondRound = 0;
+        fiveRounds.player2.thirdRound = 0;
+        fiveRounds.player2.fourthRound = 0;
+        fiveRounds.player2.fifthRound = 0;
+        playerOneScore = 0;
+        playerTwoScore = 0;
     }
     function modifyPlayer(name = '', playerNumber = 1) {
         if(playerNumber === 1) {
@@ -669,18 +686,25 @@ const ticTacToe = (() => {
         playerTwoScore = 0;
     }
     const createPlayerBtn = document.querySelector("#createPlayerBtn");
-    const modifyPlayerBtn = document.querySelector("#mdofiyPlayerBtn");
+    const modifyPlayerBtn = document.querySelector("#modifyPlayerBtn");
     const restartGameBtn = document.querySelector("#restartGameBtn");
-    const dialog = document.querySelector("#createPlayerDialog");
+    const dialogCreatePlayer = document.querySelector("#createPlayerDialog");
+    const dialogModifyPlayer = document.querySelector("#modifyPlayerDialog");
+    const closeBtn = document.querySelectorAll('.closeBtn');
     createPlayerBtn.addEventListener("click", () => {
-        dialog.showModal();
+        dialogCreatePlayer.showModal();
     })
     modifyPlayerBtn.addEventListener("click", () => {
-
+        dialogModifyPlayer.showModal();
     })
     restartGameBtn.addEventListener("click", () => {
-
+        resetPlayer();
+        resetGame();
     })
+    closeBtn.forEach((btn) => btn.addEventListener("click", () => {
+        dialogCreatePlayer.close();
+        dialogModifyPlayer.close();
+    }))
     return {
         currentPlayers,
         displayControl,

@@ -34,5 +34,39 @@
         <div id="informationalBarContent">
         </div>
     </div>
+    <dialog id="createPlayerDialog">
+        <form>
+            <label for="playerName">Player Name</label>
+            <input type="text" id="playerName" required placeholder="Write a name">
+            <fieldset>
+                <legend>Player Number</legend>
+                <label for="playerOne">Player 1</label>
+                <input type="radio" id="playerOne" required>
+                <label for="playerTwo">Player 2</label>
+                <input type="radio" id="playerTwo" required>
+            </fieldset>
+            <div>
+                <button type="submit" id="submitBtnCreate">Submit</button>
+                <button type="button" class="closeBtn">Close</button>
+            </div>        
+        </form>
+    </dialog>
+    <dialog id="modifyPlayerDialog">
+        <form>
+            <label for="playerName">Player Name</label>
+            <input type="text" id="playerName" required placeholder="Write a name">
+            <fieldset>
+                <legend>Player Number</legend>
+                <label for="playerOne">Player 1</label>
+                <input type="radio" id="playerOne" required>
+                <label for="playerTwo">Player 2</label>
+                <input type="radio" id="playerTwo" required>
+            </fieldset>
+            <div>
+                <button type="submit" id="submitBtnModify">Submit</button>
+                <button type="button" class="closeBtn">Close</button>
+            </div>
+        </form>
+    </dialog>
 </body>
 </html>
