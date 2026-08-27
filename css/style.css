@@ -2,9 +2,16 @@
     box-sizing: border-box;
     line-height: 1.5;
     margin: auto;
-    text-align: center;
     background-color: rgb(241, 232, 232);
     
+}
+
+@font-face {
+    font-family: 'CocogooseProTrial';
+    src: url('../assets/fonts/CocogooseProTrial-Bold.woff2') format('woff2');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
 }
 
 body {
@@ -17,6 +24,7 @@ div#ticTacToe {
     width: 500px;
     height: 500px;
     flex-flow: column wrap;
+    font-family: 'CocogooseProTrial';
 }
 
 div#ticTacToe > div {
@@ -91,12 +99,26 @@ div#informationalBar {
     align-items: center;
 }
 
-div#informationalBar > div {
+div#informationalBar > div#informationalBarContent {
     background-color: rgba(1, 4, 0, 0.765);
     height: 98%;
     width: 30%;
     border: 1px solid rgba(148, 147, 147, 0.753);
     color: rgb(249, 221, 120);
+    display: flex;
+    overflow: hidden;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-content: flex-start;
+}
+
+ul {
+    list-style-type: none;
+    background-color: rgba(1, 4, 0, 0.765);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
 }
 
 button {
@@ -122,12 +144,28 @@ dialog#createPlayerDialog input {
     border: 1px solid black;
 }
 
-#informationalBarContent {
-    display: flex;
-    overflow: hidden;
-}
-
 #informationalBarContent > div {
     display: flex;
     flex-flow: column nowrap;
+    background-color: rgba(1, 4, 0, 0.765);
+    justify-content: center;
+    align-content: center;
+    gap: 5px;
+}
+
+#informationalBarContent > div > p, #informationalBarContent > div > div > ul {
+    background-color: rgba(1, 4, 0, 0.765);
+}
+
+#informationalBarContent > div  {
+    background-color: rgba(1, 4, 0, 0.765);
+}
+#informationalBarContent > div > div {
+    background-color: rgba(1, 4, 0, 0.765);
+    height: 90%;
+    margin: 10px;
+}
+
+li {
+    background-color: rgba(1, 4, 0, 0.765);
 }

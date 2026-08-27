@@ -32,6 +32,24 @@
     </div>
     <div id="informationalBar">
         <div id="informationalBarContent">
+            <div id="player1">
+                <p id="paraPlayer1Title">Player1</p>
+                <p id="player1PointParagraph">Points: -</p>
+            </div>
+            <div id="fiveRounds">
+                <p>Five rounds</p>
+                <div>
+                    <ul id="fiveRoundsList">
+                        <li> - </li>
+                        <li> </li>
+                        <li> </li>
+                    </ul>
+                </div>
+            </div>
+            <div id="player2">
+                <p id="paraPlayer2Title">Player 2</p>
+                <p id="player2PointParagraph">Points: -</p>
+            </div>
         </div>
     </div>
     <dialog id="createPlayerDialog">
@@ -41,12 +59,12 @@
             <fieldset>
                 <legend>Player Number</legend>
                 <label for="playerOne">Player 1</label>
-                <input type="radio" id="playerOne" required>
+                <input type="radio" id="playerOne" required name="playerName" value="player1">
                 <label for="playerTwo">Player 2</label>
-                <input type="radio" id="playerTwo" required>
+                <input type="radio" id="playerTwo" name="playerName" value="player2">
             </fieldset>
             <div>
-                <button type="submit" id="submitBtnCreate">Submit</button>
+                <button type="submit" id="submitBtnCreate">Create</button>
                 <button type="button" class="closeBtn">Close</button>
             </div>        
         </form>
@@ -63,7 +81,7 @@
                 <input type="radio" id="playerTwo" required>
             </fieldset>
             <div>
-                <button type="submit" id="submitBtnModify">Submit</button>
+                <button type="submit" id="submitBtnModify">Modify</button>
                 <button type="button" class="closeBtn">Close</button>
             </div>
         </form>
