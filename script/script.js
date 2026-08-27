@@ -545,14 +545,13 @@ const ticTacToe = (() => {
                     winnerDecla.style.fontSize = "1.1rem";
                     fiveRoundsBar.appendChild(winnerDecla);
                 }
-                else if(currentPlayers[0].playerPoint === currentPlayers[1].playerPoint) {
+            }
+            else if(fifthRoundPara.textContent !== '-' && currentPlayers[0].playerPoint === currentPlayers[1].playerPoint) {
                     winnerDecla.textContent = `${currentPlayers[0].name} and ${currentPlayers[1].name} got the same amount of points`;
                     winnerDecla.style.backgroundColor = "rgba(1, 4, 0, 0.765);"
                     winnerDecla.style.fontSize = "1.1rem";
                     fiveRoundsBar.appendChild(winnerDecla);
                 }
-                
-            }
         }
         function getTurn() {
             if(playerTurn.player1 === 1 && playerTurn.player2 === 0) {
@@ -724,7 +723,7 @@ const ticTacToe = (() => {
             displayControl.setTurn();
             }
         }
-        if(fiveRounds.player1.fifthRound === 1 || fiveRounds.player2.fifthRound === 1) {firstCell.textContent = ''};
+        if(fiveRounds.player1.fifthRound === 1 || fiveRounds.player2.fifthRound === 1 || fifthRoundPara.textContent === 'Draw') {firstCell.textContent = ''};
     })
     secondCell.addEventListener('click', () => {
         if(playerTurn.player1 === 1) {
@@ -747,7 +746,7 @@ const ticTacToe = (() => {
             displayControl.setTurn();
             }
         }
-        if(fiveRounds.player1.fifthRound === 1 || fiveRounds.player2.fifthRound === 1) {secondCell.textContent = ''};
+        if(fiveRounds.player1.fifthRound === 1 || fiveRounds.player2.fifthRound === 1 || fifthRoundPara.textContent === 'Draw') {secondCell.textContent = ''};
     })
     thirdCell.addEventListener('click', () => {
         if(playerTurn.player1 === 1) {
@@ -770,7 +769,7 @@ const ticTacToe = (() => {
             displayControl.setTurn();
             }
         }
-        if(fiveRounds.player1.fifthRound === 1 || fiveRounds.player2.fifthRound === 1) {thirdCell.textContent = ''};
+        if(fiveRounds.player1.fifthRound === 1 || fiveRounds.player2.fifthRound === 1 || fifthRoundPara.textContent === 'Draw') {thirdCell.textContent = ''};
     })
     fourthCell.addEventListener('click', () => {
         if(playerTurn.player1 === 1) {
@@ -793,7 +792,7 @@ const ticTacToe = (() => {
             displayControl.setTurn();
             }
         }
-        if(fiveRounds.player1.fifthRound === 1 || fiveRounds.player2.fifthRound === 1) {fourthCell.textContent = ''};
+        if(fiveRounds.player1.fifthRound === 1 || fiveRounds.player2.fifthRound === 1 || fifthRoundPara.textContent === 'Draw') {fourthCell.textContent = ''};
     })
     fifthCell.addEventListener('click', () => {
         if(playerTurn.player1 === 1) {
@@ -816,7 +815,7 @@ const ticTacToe = (() => {
             displayControl.setTurn();
             }
         }
-        if(fiveRounds.player1.fifthRound === 1 || fiveRounds.player2.fifthRound === 1) {fifthCell.textContent = ''};
+        if(fiveRounds.player1.fifthRound === 1 || fiveRounds.player2.fifthRound === 1 || fifthRoundPara.textContent === 'Draw') {fifthCell.textContent = ''};
     })
     sixthCell.addEventListener('click', () => {
         if(playerTurn.player1 === 1) {
@@ -839,7 +838,7 @@ const ticTacToe = (() => {
             displayControl.setTurn();
             }
         }
-        if(fiveRounds.player1.fifthRound === 1 || fiveRounds.player2.fifthRound === 1) {sixthCell.textContent = ''};
+        if(fiveRounds.player1.fifthRound === 1 || fiveRounds.player2.fifthRound === 1 || fifthRoundPara.textContent === 'Draw') {sixthCell.textContent = ''};
     })
     seventhCell.addEventListener('click', () => {
         if(playerTurn.player1 === 1) {
@@ -862,7 +861,7 @@ const ticTacToe = (() => {
             displayControl.setTurn();
             }
         }
-        if(fiveRounds.player1.fifthRound === 1 || fiveRounds.player2.fifthRound === 1) {seventhCell.textContent = ''};
+        if(fiveRounds.player1.fifthRound === 1 || fiveRounds.player2.fifthRound === 1 || fifthRoundPara.textContent === 'Draw') {seventhCell.textContent = ''};
     })
     eigthCell.addEventListener('click', () => {
         if(playerTurn.player1 === 1) {
@@ -885,7 +884,7 @@ const ticTacToe = (() => {
             displayControl.setTurn();
             }
         }
-        if(fiveRounds.player1.fifthRound === 1 || fiveRounds.player2.fifthRound === 1) {eigthCell.textContent = ''};
+        if(fiveRounds.player1.fifthRound === 1 || fiveRounds.player2.fifthRound === 1 || fifthRoundPara.textContent === 'Draw') {eigthCell.textContent = ''};
     })
     ninethCell.addEventListener('click', () => {
         if(playerTurn.player1 === 1) {
@@ -908,7 +907,7 @@ const ticTacToe = (() => {
             displayControl.setTurn();
             }
         }
-        if(fiveRounds.player1.fifthRound === 1 || fiveRounds.player2.fifthRound === 1) {ninethCell.textContent = ''};
+        if(fiveRounds.player1.fifthRound === 1 || fiveRounds.player2.fifthRound === 1 || fifthRoundPara.textContent === 'Draw') {ninethCell.textContent = ''};
     })
     function cleanBoard() {
         firstCell.textContent = '';
