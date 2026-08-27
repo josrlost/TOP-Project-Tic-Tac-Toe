@@ -112,14 +112,6 @@ div#informationalBar > div#informationalBarContent {
     align-content: flex-start;
 }
 
-ul {
-    list-style-type: none;
-    background-color: rgba(1, 4, 0, 0.765);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-content: center;
-}
 
 button {
     border-radius: 10px;
@@ -166,6 +158,7 @@ dialog#createPlayerDialog input {
     margin: 10px;
 }
 
-li {
-    background-color: rgba(1, 4, 0, 0.765);
+div#fiveRound {
+    display: flex;
+    flex-direction: column;
 }
