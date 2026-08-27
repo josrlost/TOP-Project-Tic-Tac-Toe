@@ -71,6 +71,8 @@ const ticTacToe = (() => {
     }
     function resetPlayer() {
         currentPlayers.splice(0, 2);
+        paraPlayer1Title.textContent = "Player1";
+        paraPlayer2Title.textContent = "Player2";
     }
     function resetGame() {
         playerTurn.player1 = 0;
@@ -104,10 +106,6 @@ const ticTacToe = (() => {
     let displayControl = (() => {
         let playerOneScore = 0;
         let playerTwoScore = 0;
-        let currentScore = `${playerOneScore} - ${playerTwoScore}`;
-        function getTheCurrentScore() {
-            return currentScore;
-        }
         function setTheCurrentScore() {
             let player1Coordinates;
             let player2Coordinates;
@@ -551,28 +549,22 @@ const ticTacToe = (() => {
                     alert("It's a draw");
                                                         }
             }
-            console.log(playerOneScore);
-            console.log(playerTwoScore);
-            currentScore = `${playerOneScore} - ${playerTwoScore}`;
         }
         function getWinner() {
             if(fiveRounds.player1.fifthRound === 1 && fiveRounds.player2.fifthRound === 0 || fiveRounds.player2.fifthRound === 1 && fiveRounds.player1.fifthRound === 0) {
                 if(currentPlayers[0].playerPoint > currentPlayers[1].playerPoint) {
-                    const winnerDecla = document.createElement('p');
                     winnerDecla.textContent = `${currentPlayers[0].name} won the most rounds`;
                     winnerDecla.style.backgroundColor = "rgba(1, 4, 0, 0.765);"
                     winnerDecla.style.fontSize = "1.1rem";
                     fiveRoundsBar.appendChild(winnerDecla);
                 }
                 else if(currentPlayers[1].playerPoint > currentPlayers[0].playerPoint) {
-                    const winnerDecla = document.createElement('p');
                     winnerDecla.textContent = `${currentPlayers[1].name} won the most rounds`;
                     winnerDecla.style.backgroundColor = "rgba(1, 4, 0, 0.765);"
                     winnerDecla.style.fontSize = "1.1rem";
                     fiveRoundsBar.appendChild(winnerDecla);
                 }
                 else if(currentPlayers[0].playerPoint === currentPlayers[1].playerPoint) {
-                    const winnerDecla = document.createElement('p');
                     winnerDecla.textContent = `${currentPlayers[0].name} and ${currentPlayers[1].name} got the same amount of points`;
                     winnerDecla.style.backgroundColor = "rgba(1, 4, 0, 0.765);"
                     winnerDecla.style.fontSize = "1.1rem";
@@ -682,7 +674,6 @@ const ticTacToe = (() => {
         }
         return { 
             getWinner,
-            getTheCurrentScore,
             setTheCurrentScore,
             getTurn,
             setTurn,
@@ -718,6 +709,7 @@ const ticTacToe = (() => {
             displayControl.setTurn();
             }
         }
+        if(fiveRounds.player1.fifthRound === 1 || fiveRounds.player2.fifthRound === 1) {firstCell.textContent = ''};
     })
     secondCell.addEventListener('click', () => {
         if(playerTurn.player1 === 1) {
@@ -740,6 +732,7 @@ const ticTacToe = (() => {
             displayControl.setTurn();
             }
         }
+        if(fiveRounds.player1.fifthRound === 1 || fiveRounds.player2.fifthRound === 1) {secondCell.textContent = ''};
     })
     thirdCell.addEventListener('click', () => {
         if(playerTurn.player1 === 1) {
@@ -762,6 +755,7 @@ const ticTacToe = (() => {
             displayControl.setTurn();
             }
         }
+        if(fiveRounds.player1.fifthRound === 1 || fiveRounds.player2.fifthRound === 1) {thirdCell.textContent = ''};
     })
     fourthCell.addEventListener('click', () => {
         if(playerTurn.player1 === 1) {
@@ -784,6 +778,7 @@ const ticTacToe = (() => {
             displayControl.setTurn();
             }
         }
+        if(fiveRounds.player1.fifthRound === 1 || fiveRounds.player2.fifthRound === 1) {fourthCell.textContent = ''};
     })
     fifthCell.addEventListener('click', () => {
         if(playerTurn.player1 === 1) {
@@ -806,6 +801,7 @@ const ticTacToe = (() => {
             displayControl.setTurn();
             }
         }
+        if(fiveRounds.player1.fifthRound === 1 || fiveRounds.player2.fifthRound === 1) {fifthCell.textContent = ''};
     })
     sixthCell.addEventListener('click', () => {
         if(playerTurn.player1 === 1) {
@@ -828,6 +824,7 @@ const ticTacToe = (() => {
             displayControl.setTurn();
             }
         }
+        if(fiveRounds.player1.fifthRound === 1 || fiveRounds.player2.fifthRound === 1) {sixthCell.textContent = ''};
     })
     seventhCell.addEventListener('click', () => {
         if(playerTurn.player1 === 1) {
@@ -850,6 +847,7 @@ const ticTacToe = (() => {
             displayControl.setTurn();
             }
         }
+        if(fiveRounds.player1.fifthRound === 1 || fiveRounds.player2.fifthRound === 1) {seventhCell.textContent = ''};
     })
     eigthCell.addEventListener('click', () => {
         if(playerTurn.player1 === 1) {
@@ -872,6 +870,7 @@ const ticTacToe = (() => {
             displayControl.setTurn();
             }
         }
+        if(fiveRounds.player1.fifthRound === 1 || fiveRounds.player2.fifthRound === 1) {eigthCell.textContent = ''};
     })
     ninethCell.addEventListener('click', () => {
         if(playerTurn.player1 === 1) {
@@ -894,6 +893,7 @@ const ticTacToe = (() => {
             displayControl.setTurn();
             }
         }
+        if(fiveRounds.player1.fifthRound === 1 || fiveRounds.player2.fifthRound === 1) {ninethCell.textContent = ''};
     })
     function cleanBoard() {
         firstCell.textContent = '';
@@ -913,6 +913,7 @@ const ticTacToe = (() => {
     const dialogModifyPlayer = document.querySelector("#modifyPlayerDialog");
     const closeBtn = document.querySelectorAll(".closeBtn");
     const fiveRoundsBar = document.querySelector("#fiveRounds");
+    let winnerDecla = document.createElement('p');
     createPlayerBtn.addEventListener("click", () => {
         dialogCreatePlayer.showModal();
     })
@@ -924,6 +925,22 @@ const ticTacToe = (() => {
         resetGame();
         paraPlayer1Point.textContent = 'Points: -';
         paraPlayer2Point.textContent = 'Points: -';
+        fiveRounds.player1.firstRound = 0;
+        fiveRounds.player1.secondRound = 0;
+        fiveRounds.player1.thirdRound = 0;
+        fiveRounds.player1.fourthRound = 0;
+        fiveRounds.player1.fifthRound = 0;
+        fiveRounds.player2.firstRound = 0;
+        fiveRounds.player2.secondRound = 0;
+        fiveRounds.player2.thirdRound = 0;
+        fiveRounds.player2.fourthRound = 0;
+        fiveRounds.player2.fifthRound = 0;
+        firstRoundPara.textContent = "-";
+        secondRoundPara.textContent = "-";
+        thirdRoundPara.textContent = "-";
+        fourthRoundPara.textContent = "-";
+        fifthRoundPara.textContent = "-";
+        fiveRoundsBar.removeChild(winnerDecla);
     })
     closeBtn.forEach((btn) => btn.addEventListener("click", () => {
         dialogCreatePlayer.close();
@@ -945,7 +962,6 @@ const ticTacToe = (() => {
     let inputRadio2 = document.querySelector("#playerTwo");
     let inputNameModify = document.querySelector("#playerNameModify");
     let inputRadio1Modify = document.querySelector("#playerOneModify");
-    let inputRadio2Modify = document.querySelector("#playerTwoModify");
     submitBtnModification.form.addEventListener("submit", (evt) => {
         evt.preventDefault();
         inputRadio1Modify.checked === true ? modifyPlayer(inputNameModify.value, 1) : modifyPlayer(inputNameModify.value, 2);
