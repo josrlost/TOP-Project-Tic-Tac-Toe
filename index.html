@@ -38,13 +38,11 @@
             </div>
             <div id="fiveRounds">
                 <p>Five rounds</p>
-                <div>
-                    <ul id="fiveRoundsList">
-                        <li> - </li>
-                        <li> </li>
-                        <li> </li>
-                    </ul>
-                </div>
+                <p id="firstRound"> - </p>
+                <p id="secondRound"> - </p>
+                <p id="thirdRound"> - </p>
+                <p id="fourthRound"> - </p>
+                <p id="fifthRound"> - </p>
             </div>
             <div id="player2">
                 <p id="paraPlayer2Title">Player 2</p>
@@ -55,7 +53,7 @@
     <dialog id="createPlayerDialog">
         <form>
             <label for="playerName">Player Name</label>
-            <input type="text" id="playerName" required placeholder="Write a name">
+            <input type="text" id="playerName" required placeholder="Write a name" maxlength="8">
             <fieldset>
                 <legend>Player Number</legend>
                 <label for="playerOne">Player 1</label>
@@ -72,13 +70,13 @@
     <dialog id="modifyPlayerDialog">
         <form>
             <label for="playerName">Player Name</label>
-            <input type="text" id="playerName" required placeholder="Write a name">
+            <input type="text" id="playerNameModify" required placeholder="Write a name" maxlength="8">
             <fieldset>
                 <legend>Player Number</legend>
-                <label for="playerOne">Player 1</label>
-                <input type="radio" id="playerOne" required>
-                <label for="playerTwo">Player 2</label>
-                <input type="radio" id="playerTwo" required>
+                <label for="playerOneModify">Player 1</label>
+                <input type="radio" id="playerOneModify" required name="playerNameModify">
+                <label for="playerTwoModify">Player 2</label>
+                <input type="radio" id="playerTwoModify" name="playerNameModify">
             </fieldset>
             <div>
                 <button type="submit" id="submitBtnModify">Modify</button>
