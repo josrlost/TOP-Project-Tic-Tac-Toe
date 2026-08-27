@@ -47,7 +47,7 @@ const ticTacToe = (() => {
     let currentPlayers = [];
     function createPlayer(name = '', numberPlayer = 0) {
         if(currentPlayers.length >= 2) {
-            throw Error('There are already two created players')
+            alert('There are already two created players')
         } else {
             const { makingMove } = gameboard;
             let uid = crypto.randomUUID();
@@ -806,13 +806,30 @@ const ticTacToe = (() => {
     let inputRadio2 = document.querySelector("#playerTwo");
     submitBtnCreation.form.addEventListener("submit", (evt) => {
         evt.preventDefault();
-        if(inputRadio1.checked === true) {
-            createPlayer(inputName.value, 1);
-        } 
-        else if(inputRadio2.checked === true) {
-            createPlayer(inputName.value, 2)
+        if(currentPlayers.length > 0) {
+            if(currentPlayers.length === 1 && inputRadio1.checked) {
+                alert('Player already created');
+            }
+            else if(currentPlayers.length === 1 && inputRadio2.checked) {
+                createPlayer(inputName.value, 2);
+                dialogCreatePlayer.close();
+            }
+            else if(currentPlayers.length === 2) {
+                alert('There are already two players created');
+                dialogCreatePlayer.close();
+            }
+
         }
-        dialogCreatePlayer.close();
+        else {
+            if(inputRadio1.checked) {
+                createPlayer(inputName.value, 1);
+                dialogCreatePlayer.close();
+            } 
+            else if(inputRadio2.checked) {
+                createPlayer(inputName.value, 2);
+                dialogCreatePlayer.close();
+            }
+        }
     })
     return {
         currentPlayers,
