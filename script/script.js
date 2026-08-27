@@ -116,40 +116,40 @@ const ticTacToe = (() => {
                 switch(player1Coordinates) {
                     case 'first column,first row,first column,second row,first column,third row':
                         playerOneScore = 1;
-                        trackVictories();
                         currentPlayers[0].totalMoves = [];
                         currentPlayers[1].totalMoves = [];
                         currentPlayers[0].playerPoint += 1;
+                        trackVictories();
                         alert('Player One won this round!');
                         if(playerOneScore === 1 || playerTwoScore === 1) {cleanBoard();};
                         setTurn();
                     break;
                     case 'second column,first row,second column,second row,second column,third row':
                         playerOneScore = 1;
-                        trackVictories();
                         currentPlayers[0].totalMoves = [];
                         currentPlayers[1].totalMoves = [];
                         currentPlayers[0].playerPoint += 1;
+                        trackVictories();
                         alert('Player One won this round!');
                         if(playerOneScore === 1 || playerTwoScore === 1) {cleanBoard();};
                         setTurn();
                     break;
                     case 'third column,first row,third column,second row,third column,third row':
                         playerOneScore = 1;
-                        trackVictories();
                         currentPlayers[0].totalMoves = [];
                         currentPlayers[1].totalMoves = [];
                         currentPlayers[0].playerPoint += 1;
+                        trackVictories();
                         alert('Player One won this round!');
                         if(playerOneScore === 1 || playerTwoScore === 1) {cleanBoard();};
                         setTurn();
                     break;
                     case 'first column,first row,second column,first row,third column,first row':
                         playerOneScore = 1;
-                        trackVictories();
                         currentPlayers[0].totalMoves = [];
                         currentPlayers[1].totalMoves = [];
                         currentPlayers[0].playerPoint += 1;
+                        trackVictories();
                         alert('Player One won this round!');
                         if(playerOneScore === 1 || playerTwoScore === 1) {cleanBoard();};
                         setTurn();
@@ -160,146 +160,147 @@ const ticTacToe = (() => {
                         currentPlayers[0].totalMoves = [];
                         currentPlayers[0].totalMoves = [];
                         currentPlayers[0].playerPoint += 1;
+                        trackVictories();
                         alert('Player One won this round!');
                         if(playerOneScore === 1 || playerTwoScore === 1) {cleanBoard();};
                         setTurn();
                     break;
                     case 'first column,third row,second column,third row,third column,third row':
                         playerOneScore = 1;
-                        trackVictories();
                         currentPlayers[0].totalMoves = [];
                         currentPlayers[1].totalMoves = [];
                         currentPlayers[0].playerPoint += 1;
+                        trackVictories();
                         alert('Player One won this round!');
                         if(playerOneScore === 1 || playerTwoScore === 1) {cleanBoard();};
                         setTurn();
                     break;
                     case 'first column,third row,second column,second row,third column,first row':
                         playerOneScore = 1;
-                        trackVictories();
                         currentPlayers[0].totalMoves = [];
                         currentPlayers[1].totalMoves = [];
                         currentPlayers[0].playerPoint += 1;
+                        trackVictories();
                         alert('Player One won this round!');
                         if(playerOneScore === 1 || playerTwoScore === 1) {cleanBoard();};
                         setTurn();
                     break;
                     case 'third column,first row,second column,second row,first column,third row':
                         playerOneScore = 1;
-                        trackVictories();
                         currentPlayers[0].totalMoves = [];
                         currentPlayers[1].totalMoves = [];
                         currentPlayers[0].playerPoint += 1;
+                        trackVictories();
                         alert('Player One won this round!');
                         if(playerOneScore === 1 || playerTwoScore === 1) {cleanBoard();};
                         setTurn();
                     break;
                     case 'third column,third row,second column,second row,first column,first row':
                         playerOneScore = 1;
-                        trackVictories();
                         currentPlayers[0].totalMoves = [];
                         currentPlayers[1].totalMoves = [];
                         currentPlayers[0].playerPoint += 1;
+                        trackVictories();
                         alert('Player One won this round!');
                         if(playerOneScore === 1 || playerTwoScore === 1) {cleanBoard();};
                         setTurn();
                     break;
                     case 'first column,first row,second column,second row,third column,third row':
                         playerOneScore = 1;
-                        trackVictories();
                         currentPlayers[0].totalMoves = [];
                         currentPlayers[1].totalMoves = [];
                         currentPlayers[0].playerPoint += 1;
+                        trackVictories();
                         alert('Player One won this round!');
                         if(playerOneScore === 1 || playerTwoScore === 1) {cleanBoard();};
                         setTurn();
                     break;
                     case 'first column,third row,first column,second row,first column,first row':
                         playerOneScore = 1;
-                        trackVictories();
                         currentPlayers[0].totalMoves = [];
                         currentPlayers[1].totalMoves = [];
                         currentPlayers[0].playerPoint += 1;
+                        trackVictories();
                         alert('Player One won this round!');
                         if(playerOneScore === 1 || playerTwoScore === 1) {cleanBoard();};
                         setTurn();
                     break;
                     case 'second column,third row,second column,second row,second column,first row':
                         playerOneScore = 1;
-                        trackVictories();
                         currentPlayers[0].totalMoves = [];
                         currentPlayers[1].totalMoves = [];
                         currentPlayers[0].playerPoint += 1;
+                        trackVictories();
                         alert('Player One won this round!');
                         if(playerOneScore === 1 || playerTwoScore === 1) {cleanBoard();};
                         setTurn();
                     break;
                     case 'third column,third row,third column,second row,third column,first row':
                         playerOneScore = 1;
-                        trackVictories();
                         currentPlayers[0].totalMoves = [];
                         currentPlayers[1].totalMoves = [];
                         currentPlayers[0].playerPoint += 1;
+                        trackVictories();
                         alert('Player One won this round!');
                         if(playerOneScore === 1 || playerTwoScore === 1) {cleanBoard();};
                         setTurn();
                     break;
                     case 'third column,second row,second column,second row,first column,second row':
                         playerOneScore = 1;
-                        trackVictories();
                         currentPlayers[0].totalMoves = [];
                         currentPlayers[1].totalMoves = [];
                         currentPlayers[0].playerPoint += 1;
+                        trackVictories();
                         alert('Player One won this round!');
                         if(playerOneScore === 1 || playerTwoScore === 1) {cleanBoard();};
                         setTurn();
                     break;
                     case 'third column,third row,second column,third row,first column,third row':
                         playerOneScore = 1;
-                        trackVictories();
                         currentPlayers[0].totalMoves = [];
                         currentPlayers[1].totalMoves = [];
                         currentPlayers[0].playerPoint += 1;
+                        trackVictories();
                         alert('Player One won this round!');
                         if(playerOneScore === 1 || playerTwoScore === 1) {cleanBoard();};
                         setTurn();
                     break;
                     case 'third column,first row,second column,first row,first column,first row':
                         playerOneScore = 1;
-                        trackVictories();
                         currentPlayers[0].totalMoves = [];
                         currentPlayers[1].totalMoves = [];
                         currentPlayers[0].playerPoint += 1;
+                        trackVictories();
                         alert('Player One won this round!');
                         if(playerOneScore === 1 || playerTwoScore === 1) {cleanBoard();};
                         setTurn();
                     break;
                     case 'first column,second row,second column,first row,second column,second row,third column,second row':
                         playerOneScore = 1;
-                        trackVictories();
                         currentPlayers[0].totalMoves = [];
                         currentPlayers[1].totalMoves = [];
                         currentPlayers[0].playerPoint += 1;
+                        trackVictories();
                         alert('Player One won this round!');
                         if(playerOneScore === 1 || playerTwoScore === 1) {cleanBoard();};
                         setTurn();
                     break;
                     case 'second column,first row,first column,second row,second column,third row':
                         playerOneScore = 1;
-                        trackVictories();
                         currentPlayers[0].totalMoves = [];
                         currentPlayers[1].totalMoves = [];
                         currentPlayers[0].playerPoint += 1;
+                        trackVictories();
                         alert('Player One won this round!');
                         if(playerOneScore === 1 || playerTwoScore === 1) {cleanBoard();};
                         setTurn();
                     break;
                     case 'first column,second row,second column,second row,third column,third row,first column,first row':
                         playerOneScore = 1;
-                        trackVictories();
                         currentPlayers[0].totalMoves = [];
                         currentPlayers[1].totalMoves = [];
                         currentPlayers[0].playerPoint += 1;
+                        trackVictories();
                         alert('Player One won this round!');
                         if(playerOneScore === 1 || playerTwoScore === 1) {cleanBoard();};
                         setTurn();
@@ -310,193 +311,174 @@ const ticTacToe = (() => {
                 switch(player2Coordinates) {
                     case 'first column,first row,first column,second row,first column,third row':
                         playerTwoScore = 1;
-                        trackVictories();
                         currentPlayers[1].totalMoves = [];
                         currentPlayers[0].totalMoves = [];
                         currentPlayers[1].playerPoint += 1;
+                        trackVictories();
                         alert('Player Two won this round!');
                         if(playerOneScore === 1 || playerTwoScore === 1) {cleanBoard();};
-                        setTurn();
                     break;
                     case 'second column,first row,second column,second row,second column,third row':
                         playerTwoScore = 1;
-                        trackVictories();
                         currentPlayers[1].totalMoves = [];
                         currentPlayers[0].totalMoves = [];
                         currentPlayers[1].playerPoint += 1;
+                        trackVictories();
                         alert('Player Two won this round!');
                         if(playerOneScore === 1 || playerTwoScore === 1) {cleanBoard();};
-                        setTurn();
                     break;
                     case 'third column,first row,third column,second row,third column,third row':
                         playerTwoScore = 1;
-                        trackVictories();
                         currentPlayers[1].totalMoves = [];
                         currentPlayers[0].totalMoves = [];
                         currentPlayers[1].playerPoint += 1;
+                        trackVictories();
                         alert('Player Two won this round!');
                         if(playerOneScore === 1 || playerTwoScore === 1) {cleanBoard();};
-                        setTurn();
                     break;
                     case 'first column,first row,second column,first row,third column,first row':
                         playerTwoScore = 1;
-                        trackVictories();
                         currentPlayers[1].totalMoves = [];
                         currentPlayers[0].totalMoves = [];
                         currentPlayers[1].playerPoint += 1;
+                        trackVictories();
                         alert('Player Two won this round!');
                         if(playerOneScore === 1 || playerTwoScore === 1) {cleanBoard();};
-                        setTurn();
                     break;
                     case 'first column,second row,second column,second row,third column,second row':
                         playerTwoScore = 1;
-                        trackVictories();
                         currentPlayers[0].totalMoves = [];
                         currentPlayers[0].totalMoves = [];
                         currentPlayers[1].playerPoint += 1;
+                        trackVictories();
                         alert('Player Two won this round!');
                         if(playerOneScore === 1 || playerTwoScore === 1) {cleanBoard();};
-                        setTurn();
                     break;
                     case 'first column,third row,second column,third row,third column,third row':
                         playerTwoScore = 1;
-                        trackVictories();
                         currentPlayers[0].totalMoves = [];
                         currentPlayers[1].totalMoves = [];
                         currentPlayers[1].playerPoint += 1;
+                        trackVictories();
                         alert('Player Two won this round!');
                         if(playerOneScore === 1 || playerTwoScore === 1) {cleanBoard();};
-                        setTurn();
                     break;
                     case 'first column,third row,second column,second row,third column,first row':
                         playerTwoScore = 1;
-                        trackVictories();
                         currentPlayers[0].totalMoves = [];
                         currentPlayers[1].totalMoves = [];
                         currentPlayers[1].playerPoint += 1;
+                        trackVictories();
                         alert('Player Two won this round!');
                         if(playerOneScore === 1 || playerTwoScore === 1) {cleanBoard();};
-                        setTurn();
                     break;
                     case 'third column,first row,second column,second row,first column,third row':
                         playerTwoScore = 1;
-                        trackVictories();
                         currentPlayers[1].totalMoves = [];
                         currentPlayers[0].totalMoves = [];
                         currentPlayers[1].playerPoint += 1;
+                        trackVictories();
                         alert('Player Two won this round!');
                         if(playerOneScore === 1 || playerTwoScore === 1) {cleanBoard();};
-                        setTurn();
                     break;
                     case 'third column,third row,second column,second row,first column,first row':
                         playerTwoScore = 1;
-                        trackVictories();
                         currentPlayers[1].totalMoves = [];
                         currentPlayers[0].totalMoves = [];
                         currentPlayers[1].playerPoint += 1;
+                        trackVictories();
                         alert('Player Two won this round!');
                         if(playerOneScore === 1 || playerTwoScore === 1) {cleanBoard();};
-                        setTurn();
                     break;
                     case 'first column,first row,second column,second row,third column,third row':
                         playerTwoScore = 1;
-                        trackVictories();
                         currentPlayers[0].totalMoves = [];
                         currentPlayers[1].totalMoves = [];
                         currentPlayers[1].playerPoint += 1;
+                        trackVictories();
                         alert('Player Two won this round!');
                         if(playerOneScore === 1 || playerTwoScore === 1) {cleanBoard();};
-                        setTurn();
                     break;
                     case 'first column,third row,first column,second row,first column,first row':
                         playerTwoScore = 1;
-                        trackVictories();
                         currentPlayers[0].totalMoves = [];
                         currentPlayers[1].totalMoves = [];
                         currentPlayers[1].playerPoint += 1;
+                        trackVictories();
                         alert('Player Two won this round!');
                         if(playerOneScore === 1 || playerTwoScore === 1) {cleanBoard();};
-                        setTurn();
                     break;
                     case 'second column,third row,second column,second row,second column,first row':
                         playerTwoScore = 1;
-                        trackVictories();
                         currentPlayers[0].totalMoves = [];
                         currentPlayers[1].totalMoves = [];
                         currentPlayers[1].playerPoint += 1;
+                        trackVictories();
                         alert('Player Two won this round!');
                         if(playerOneScore === 1 || playerTwoScore === 1) {cleanBoard();};
-                        setTurn();
                     break;
                     case 'third column,third row,third column,second row,third column,first row':
                         playerTwoScore = 1;
-                        trackVictories();
                         currentPlayers[0].totalMoves = [];
                         currentPlayers[1].totalMoves = [];
                         currentPlayers[1].playerPoint += 1;
+                        trackVictories();
                         alert('Player Two won this round!');
                         if(playerOneScore === 1 || playerTwoScore === 1) {cleanBoard();};
-                        setTurn();
                     break;
                     case 'third column,second row,second column,second row,first column,second row':
                         playerTwoScore = 1;
-                        trackVictories();
                         currentPlayers[0].totalMoves = [];
                         currentPlayers[1].totalMoves = [];
                         currentPlayers[1].playerPoint += 1;
+                        trackVictories();
                         alert('Player Two won this round!');
                         if(playerOneScore === 1 || playerTwoScore === 1) {cleanBoard();};
-                        setTurn();
                     break;
                     case 'third column,third row,second column,third row,first column,third row':
                         playerTwoScore = 1;
-                        trackVictories();
                         currentPlayers[0].totalMoves = [];
                         currentPlayers[1].totalMoves = [];
                         currentPlayers[1].playerPoint += 1;
+                        trackVictories();
                         alert('Player Two won this round!');
                         if(playerOneScore === 1 || playerTwoScore === 1) {cleanBoard();};
-                        setTurn();
                     break;
                     case 'third column,first row,second column,first row,first column,first row':
                         playerTwoScore = 1;
-                        trackVictories();
                         currentPlayers[0].totalMoves = [];
                         currentPlayers[1].totalMoves = [];
                         currentPlayers[1].playerPoint += 1;
+                        trackVictories();
                         alert('Player Two won this round!');
                         if(playerOneScore === 1 || playerTwoScore === 1) {cleanBoard();};
-                        setTurn();
                     break;
                     case 'first column,second row,second column,first row,second column,second row,third column,second row':
                         playerTwoScore = 1;
-                        trackVictories();
                         currentPlayers[0].totalMoves = [];
                         currentPlayers[1].totalMoves = [];
                         currentPlayers[1].playerPoint += 1;
+                        trackVictories();
                         alert('Player Two won this round!');
                         if(playerOneScore === 1 || playerTwoScore === 1) {cleanBoard();};
-                        setTurn();
                     break;
                     case 'second column,first row,first column,second row,second column,third row':
                         playerTwoScore = 1;
-                        trackVictories();
                         currentPlayers[0].totalMoves = [];
                         currentPlayers[1].totalMoves = [];
                         currentPlayers[1].playerPoint += 1;
+                        trackVictories();
                         alert('Player Two won this round!');
                         if(playerOneScore === 1 || playerTwoScore === 1) {cleanBoard();};
-                        setTurn();
                     break;
                     case 'first column,second row,second column,second row,third column,third row,first column,first row':
                         playerTwoScore = 1;
-                        trackVictories();
                         currentPlayers[0].totalMoves = [];
                         currentPlayers[1].totalMoves = [];
                         currentPlayers[1].playerPoint += 1;
+                        trackVictories();
                         alert('Player Two won this round!');
                         if(playerOneScore === 1 || playerTwoScore === 1) {cleanBoard();};
-                        setTurn();
                     break;
                 }
             if(player1Coordinates === 'second column,first row,second column,second row,third column,second row,first column,third row' &&
@@ -536,55 +518,71 @@ const ticTacToe = (() => {
             }
         }
         function trackVictories() {
-           if(currentPlayers[0].playerPoint === 0 && playerOneScore === 1) {
+           if(currentPlayers[0].playerPoint === 1 && playerOneScore === 1 && fiveRounds.player1.firstRound === 0) {
                 fiveRounds.player1.firstRound = 1;
-                fiveRounds.player2.firstRound = 0;
                 paraPlayer1Point.textContent = 'Point: 1';
+                paraPoint.textContent = `${currentPlayers[0].name} won`
            }
-           else if(currentPlayers[1].playerPoint === 0 && playerTwoScore === 1) {
-                fiveRounds.player1.firstRound = 0;
+           else if(currentPlayers[1].playerPoint === 1 && playerTwoScore === 1 && fiveRounds.player2.firstRound === 0) {
                 fiveRounds.player2.firstRound = 1;
                 paraPlayer2Point.textContent = 'Point: 1';
+                paraPoint.textContent = `${currentPlayers[1].name} won`
            }
-           if(fiveRounds.player1.firstRound === 1 && currentPlayers[0].playerPoint === 2) {
+           if(currentPlayers[0].playerPoint === 2 && fiveRounds.player1.firstRound === 1 && fiveRounds.player1.secondRound === 0) {
                 fiveRounds.player1.secondRound = 1;
-                fiveRounds.player2.secondRound = 0;
                 paraPlayer1Point.textContent = 'Points: 2';
+                let paragr1 = document.createElement('p');
+                paragr1.textContent = `${currentPlayers[0].name} won`
+                paraFiveRounds.appendChild(paragr1);
            }
-            else if(fiveRounds.player2.firstRound === 1 && currentPlayers[1].playerPoint === 2) {
+            else if(fiveRounds.player2.firstRound === 1 && currentPlayers[1].playerPoint === 2 && fiveRounds.player2.secondRound === 0) {
                 fiveRounds.player2.secondRound = 1;
-                fiveRounds.player1.secondRound = 0;
                 paraPlayer2Point.textContent = 'Points: 2';
+                let paragr1 = document.createElement('p');
+                paragr1.textContent = `${currentPlayers[1].name} won`
+                paraFiveRounds.appendChild(paragr1);
            }
-           if(fiveRounds.player1.secondRound === 1 && currentPlayers[0].playerPoint === 3) {
+           if(fiveRounds.player1.secondRound === 1 && currentPlayers[0].playerPoint === 3 && fiveRounds.player1.thirdRound === 0) {
                 fiveRounds.player1.thirdRound = 1;
-                fiveRounds.player2.thirdRound = 0;
                 paraPlayer1Point.textContent = 'Points: 3';
+                let paragr2 = document.createElement('p');
+                paragr2.textContent = `${currentPlayers[0].name} won`
+                paraFiveRounds.appendChild(paragr2);
            }
-           else if(fiveRounds.player2.secondRound === 1 && currentPlayers[1].playerPoint === 3) {
+           else if(fiveRounds.player2.secondRound === 1 && currentPlayers[1].playerPoint === 3 && fiveRounds.player2.thirdRound === 0) {
                 fiveRounds.player2.thirdRound = 1;
-                fiveRounds.player1.thirdRound = 0;
                 paraPlayer2Point.textContent = 'Points: 3';
+                let paragr2 = document.createElement('p');
+                paragr2.textContent = `${currentPlayers[1].name} won`
+                paraFiveRounds.appendChild(paragr2);
            }
-           if(fiveRounds.player1.thirdRound === 1 && currentPlayers[0].playerPoint === 4) {
+           if(fiveRounds.player1.thirdRound === 1 && currentPlayers[0].playerPoint === 4 && fiveRounds.player1.fourthRound === 0) {
                 fiveRounds.player1.fourthRound = 1;
-                fiveRounds.player2.fourthRound = 0;
                 paraPlayer1Point.textContent = 'Points: 4';
+                let paragr3 = document.createElement('p');
+                paragr3.textContent = `${currentPlayers[0].name} won`
+                paraFiveRounds.appendChild(paragr3);
            }
-           else if(fiveRounds.player2.thirdRound === 1 && currentPlayers[1].playerPoint === 4) {
+           else if(fiveRounds.player2.thirdRound === 1 && currentPlayers[1].playerPoint === 4 && fiveRounds.player2.fourthRound === 0) {
                 fiveRounds.player2.fourthRound = 1;
-                fiveRounds.player1.fourthRound = 0;
                 paraPlayer2Point.textContent = 'Points: 4';
+                let paragr3 = document.createElement('p');
+                paragr3.textContent = `${currentPlayers[1].name} won`
+                paraFiveRounds.appendChild(paragr3);
            }
-           if(fiveRounds.player1.fourthRound === 1 && currentPlayers[0].playerPoint === 5) {
+           if(fiveRounds.player1.fourthRound === 1 && currentPlayers[0].playerPoint === 5 && fiveRounds.player1.fifthRound === 0) {
                 fiveRounds.player1.fifthRound = 1;
-                fiveRounds.player2.fifthRound = 0;
                 paraPlayer1Point.textContent = 'Points: 5';
+                let paragr4 = document.createElement('p');
+                paragr4.textContent = `${currentPlayers[0].name} won`
+                paraFiveRounds.appendChild(paragr4);
            }
-           else if(fiveRounds.player2.fourthRound === 1 && currentPlayers[1].playerPoint === 5) {
+           else if(fiveRounds.player2.fourthRound === 1 && currentPlayers[1].playerPoint === 5 && fiveRounds.player2.fifthRound === 0) {
                 fiveRounds.player2.fifthRound = 1;
-                fiveRounds.player1.fifthRound = 0;
                 paraPlayer2Point.textContent = 'Points: 5';
+                let paragr4 = document.createElement('p');
+                paragr4.textContent = `${currentPlayers[1].name} won`
+                paraFiveRounds.appendChild(paragr4);
            }
            console.log(fiveRounds);
         }
@@ -779,6 +777,7 @@ const ticTacToe = (() => {
     const dialogCreatePlayer = document.querySelector("#createPlayerDialog");
     const dialogModifyPlayer = document.querySelector("#modifyPlayerDialog");
     const closeBtn = document.querySelectorAll('.closeBtn');
+    const paraFiveRounds = document.querySelector('#fiveRounds');
     createPlayerBtn.addEventListener("click", () => {
         dialogCreatePlayer.showModal();
     })
@@ -799,6 +798,7 @@ const ticTacToe = (() => {
     let paraPlayer2Point = document.querySelector("#player2PointParagraph");
     let paraPlayer1Title = document.querySelector("#paraPlayer1Title");
     let paraPlayer2Title = document.querySelector("#paraPlayer2Title");
+    let paraPoint = document.querySelector("#paraPoint");
     const submitBtnCreation = document.querySelector("#submitBtnCreate");
     const submitBtnModification = document.querySelector("#submitBtnModify");
     let inputName = document.querySelector("#playerName");
