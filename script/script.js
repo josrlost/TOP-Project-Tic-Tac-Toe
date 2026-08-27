@@ -324,16 +324,6 @@ const ticTacToe = (() => {
                         cleanBoard();
                         setTurn();
                     break;
-                    case 'second column,first row,second column,second row,third column,second row':
-                        playerOScore = 1;
-                        currentPlayers[0].totalMoves = [];
-                        currentPlayers[1].totalMoves = [];
-                        currentPlayers[0].playerPoint += 1;
-                        trackVictories();
-                        alert('Player One won this round!');
-                        if(playerOneScore === 1 || playerTwoScore === 1) {playerOneScore = 0; playerTwoScore = 0;}
-                        cleanBoard();
-                    break;
                 }
             }
             else if(playerTurn.player2 === 1 && playerTurn.player1 === 0) {
@@ -528,16 +518,6 @@ const ticTacToe = (() => {
                         if(playerOneScore === 1 || playerTwoScore === 1) {playerOneScore = 0; playerTwoScore = 0;}
                         cleanBoard();
                     break;
-                    case 'second column,first row,second column,second row,third column,second row':
-                        playerTwoScore = 1;
-                        currentPlayers[0].totalMoves = [];
-                        currentPlayers[1].totalMoves = [];
-                        currentPlayers[1].playerPoint += 1;
-                        trackVictories();
-                        alert('Player Two won this round!');
-                        if(playerOneScore === 1 || playerTwoScore === 1) {playerOneScore = 0; playerTwoScore = 0;}
-                        cleanBoard();
-                    break;
                 }
             if(player1Coordinates === 'second column,first row,second column,second row,third column,second row,first column,third row' &&
                 player2Coordinates === 'second column,first row,second column,second row,third column,second row,first column,third row') 
@@ -549,6 +529,7 @@ const ticTacToe = (() => {
                     alert("It's a draw");
                                                         }
             }
+            trackVictories();
         }
         function getWinner() {
             if(fiveRounds.player1.fifthRound === 1 && fiveRounds.player2.fifthRound === 0 || fiveRounds.player2.fifthRound === 1 && fiveRounds.player1.fifthRound === 0) {
@@ -590,81 +571,110 @@ const ticTacToe = (() => {
             }
         }
         function trackVictories() {
-           if(playerOneScore === 1 && fiveRounds.player2.firstRound === 0 && currentPlayers[0].playerPoint === 1) {
+            if(firstCell.textContent !== '' &&
+                secondCell.textContent !== '' &&
+                thirdCell.textContent !== '' &&
+                fourthCell.textContent !== '' &&
+                fifthCell.textContent !== '' &&
+                sixthCell.textContent !== '' &&
+                seventhCell.textContent !== '' &&
+                eigthCell.textContent !== '' &&
+                ninethCell.textContent !== ''
+            ) {
+                if(playerOneScore === 0 && playerOneScore === 0) {
+                    if(fiveRounds.player1.firstRound === 0 && fiveRounds.player2.firstRound === 0) {
+                        firstRoundPara.textContent = "Draw";
+                        cleanBoard();
+                    } else if(fiveRounds.player1.secondRound === 0 && fiveRounds.player2.secondRound === 0) {
+                        secondRoundPara.textContent = "Draw";
+                        cleanBoard();
+                    } else if(fiveRounds.player1.thirdRound === 0 && fiveRounds.player2.thirdRound === 0) {
+                        thirdRoundPara.textContent = "Draw";
+                        cleanBoard();
+                    } else if(fiveRounds.player1.fourthRound === 0 && fiveRounds.player2.fourthRound === 0) {
+                        fourthRoundPara.textContent = "Draw";
+                        cleanBoard();
+                    } else if(fiveRounds.player1.fifthRound === 0 && fiveRounds.player2.fifthRound === 0) {
+                        fifthRoundPara.textContent = "Draw";
+                        cleanBoard();
+                    }
+                }
+            }
+           if(playerOneScore === 1 && fiveRounds.player2.firstRound === 0 && currentPlayers[0].playerPoint === 1 && !firstRoundPara.textContent === 'Draw') {
                 fiveRounds.player1.firstRound = 1;
                 paraPlayer1Point.textContent = `Points: ${currentPlayers[0].playerPoint}`
                 firstRoundPara.textContent = `${currentPlayers[0].name} won 1st round`; 
            }
-           else if(playerTwoScore === 1 && fiveRounds.player1.firstRound === 0  && currentPlayers[1].playerPoint === 1) {
+           else if(playerTwoScore === 1 && fiveRounds.player1.firstRound === 0  && currentPlayers[1].playerPoint === 1 && !firstRoundPara.textContent === 'Draw') {
                 fiveRounds.player2.firstRound = 1;
                 paraPlayer2Point.textContent = `Points: ${currentPlayers[1].playerPoint}`
                 firstRoundPara.textContent = `${currentPlayers[1].name} won 1st round`; 
            }
-           if(playerOneScore === 1 && fiveRounds.player2.secondRound === 0 && currentPlayers[0].playerPoint === 2 ||
-                playerOneScore === 1 && fiveRounds.player2.secondRound === 0 && currentPlayers[1].playerPoint === 1 ||
-                playerOneScore === 1 && fiveRounds.player2.secondRound === 0 && currentPlayers[0].playerPoint === 1 && currentPlayers[1].playerPoint === 1
+           if(playerOneScore === 1 && fiveRounds.player2.secondRound === 0 && currentPlayers[0].playerPoint === 2 && !secondRoundPara.textContent === 'Draw' ||
+                playerOneScore === 1 && fiveRounds.player2.secondRound === 0 && currentPlayers[1].playerPoint === 1 && !secondRoundPara.textContent === 'Draw'||
+                playerOneScore === 1 && fiveRounds.player2.secondRound === 0 && currentPlayers[0].playerPoint === 1 && currentPlayers[1].playerPoint === 1 && !secondRoundPara.textContent === 'Draw'
            ) {
                 fiveRounds.player1.secondRound = 1;
                 paraPlayer1Point.textContent = `Points: ${currentPlayers[0].playerPoint}`
                 secondRoundPara.textContent = `${currentPlayers[0].name} won 2nd round`; 
            }
-           else if(playerTwoScore === 1 && fiveRounds.player1.secondRound === 0 && currentPlayers[1].playerPoint === 2 ||
-                playerTwoScore === 1 && fiveRounds.player1.secondRound === 0 && currentPlayers[0].playerPoint === 1 ||
-                playerTwoScore === 1 && fiveRounds.player1.secondRound === 0 && currentPlayers[1].playerPoint === 1 && currentPlayers[0].playerPoint === 1
+           else if(playerTwoScore === 1 && fiveRounds.player1.secondRound === 0 && currentPlayers[1].playerPoint === 2 && !secondRoundPara.textContent === 'Draw' ||
+                playerTwoScore === 1 && fiveRounds.player1.secondRound === 0 && currentPlayers[0].playerPoint === 1 && !secondRoundPara.textContent === 'Draw' ||
+                playerTwoScore === 1 && fiveRounds.player1.secondRound === 0 && currentPlayers[1].playerPoint === 1 && currentPlayers[0].playerPoint === 1 && !secondRoundPara.textContent === 'Draw'
            ) {
                 fiveRounds.player2.secondRound = 1;
                 paraPlayer2Point.textContent = `Points: ${currentPlayers[1].playerPoint}`
                 secondRoundPara.textContent = `${currentPlayers[1].name} won 2nd round`; 
            }
-           if(playerOneScore === 1 && fiveRounds.player2.thirdRound === 0 && currentPlayers[0].playerPoint === 3 ||
-                playerOneScore === 1 && fiveRounds.player2.thirdRound === 0 && currentPlayers[1].playerPoint === 2 && currentPlayers[0].playerPoint === 1 ||
-                playerOneScore === 1 && fiveRounds.player2.thirdRound === 0 && currentPlayers[0].playerPoint === 2 && currentPlayers[1].playerPoint === 1
+           if(playerOneScore === 1 && fiveRounds.player2.thirdRound === 0 && currentPlayers[0].playerPoint === 3 && !thirdRoundPara.textContent === 'Draw'||
+                playerOneScore === 1 && fiveRounds.player2.thirdRound === 0 && currentPlayers[1].playerPoint === 2 && currentPlayers[0].playerPoint === 1 && !thirdRoundPara.textContent === 'Draw' ||
+                playerOneScore === 1 && fiveRounds.player2.thirdRound === 0 && currentPlayers[0].playerPoint === 2 && currentPlayers[1].playerPoint === 1 && !thirdRoundPara.textContent === 'Draw'
            ) {
                 fiveRounds.player1.thirdRound = 1;
                 paraPlayer1Point.textContent = `Points: ${currentPlayers[0].playerPoint}`
                 thirdRoundPara.textContent = `${currentPlayers[0].name} won 3rd round`; 
            }
-           else if(playerTwoScore === 1 && fiveRounds.player1.thirdRound === 0 && currentPlayers[1].playerPoint === 3 ||
-                playerTwoScore === 1 && fiveRounds.player1.thirdRound === 0 && currentPlayers[0].playerPoint === 2 && currentPlayers[1].playerPoint === 1 ||
-                playerTwoScore === 1 && fiveRounds.player1.thirdRound === 0 && currentPlayers[1].playerPoint === 2 && currentPlayers[0].playerPoint === 1
+           else if(playerTwoScore === 1 && fiveRounds.player1.thirdRound === 0 && currentPlayers[1].playerPoint === 3 && !thirdRoundPara.textContent === 'Draw' ||
+                playerTwoScore === 1 && fiveRounds.player1.thirdRound === 0 && currentPlayers[0].playerPoint === 2 && currentPlayers[1].playerPoint === 1 && !thirdRoundPara.textContent === 'Draw' ||
+                playerTwoScore === 1 && fiveRounds.player1.thirdRound === 0 && currentPlayers[1].playerPoint === 2 && currentPlayers[0].playerPoint === 1 && !thirdRoundPara.textContent === 'Draw'
            ) {
                 fiveRounds.player2.thirdRound = 1;
                 paraPlayer2Point.textContent = `Points: ${currentPlayers[1].playerPoint}`
                 thirdRoundPara.textContent = `${currentPlayers[1].name} won 3rd round`; 
            }
-           if(playerOneScore === 1 && fiveRounds.player2.fourthRound === 0 && currentPlayers[0].playerPoint === 4 ||
-                playerOneScore === 1 && fiveRounds.player2.fourthRound === 0 && currentPlayers[1].playerPoint === 2 && currentPlayers[0].playerPoint === 2 ||
-                playerOneScore === 1 && fiveRounds.player2.fourthRound === 0 && currentPlayers[0].playerPoint === 3 && currentPlayers[1].playerPoint === 1 ||
-                playerOneScore === 1 && fiveRounds.player2.fourthRound === 0 && currentPlayers[1].playerPoint === 3 && currentPlayers[0].playerPoint === 1
+           if(playerOneScore === 1 && fiveRounds.player2.fourthRound === 0 && currentPlayers[0].playerPoint === 4 && !fourthRoundPara.textContent === 'Draw'||
+                playerOneScore === 1 && fiveRounds.player2.fourthRound === 0 && currentPlayers[1].playerPoint === 2 && currentPlayers[0].playerPoint === 2 && !fourthRoundPara.textContent === 'Draw'||
+                playerOneScore === 1 && fiveRounds.player2.fourthRound === 0 && currentPlayers[0].playerPoint === 3 && currentPlayers[1].playerPoint === 1 && !fourthRoundPara.textContent === 'Draw'||
+                playerOneScore === 1 && fiveRounds.player2.fourthRound === 0 && currentPlayers[1].playerPoint === 3 && currentPlayers[0].playerPoint === 1 && !fourthRoundPara.textContent === 'Draw'
            ) {
                 fiveRounds.player1.fourthRound = 1;
                 paraPlayer1Point.textContent = `Points: ${currentPlayers[0].playerPoint}`
                 fourthRoundPara.textContent = `${currentPlayers[0].name} won 4th round`; 
            }
-           else if(playerTwoScore === 1 && fiveRounds.player1.fourthRound === 0 && currentPlayers[1].playerPoint === 4 ||
-                playerTwoScore === 1 && fiveRounds.player1.fourthRound === 0 && currentPlayers[0].playerPoint === 2 && currentPlayers[1].playerPoint === 2 ||
-                playerTwoScore === 1 && fiveRounds.player1.fourthRound === 0 && currentPlayers[1].playerPoint === 3 && currentPlayers[0].playerPoint === 1 ||
-                playerTwoScore === 1 && fiveRounds.player1.fourthRound === 0 && currentPlayers[0].playerPoint === 3 && currentPlayers[1].playerPoint === 1
+           else if(playerTwoScore === 1 && fiveRounds.player1.fourthRound === 0 && currentPlayers[1].playerPoint === 4 && !fourthRoundPara.textContent === 'Draw' ||
+                playerTwoScore === 1 && fiveRounds.player1.fourthRound === 0 && currentPlayers[0].playerPoint === 2 && currentPlayers[1].playerPoint === 2 && !fourthRoundPara.textContent === 'Draw' ||
+                playerTwoScore === 1 && fiveRounds.player1.fourthRound === 0 && currentPlayers[1].playerPoint === 3 && currentPlayers[0].playerPoint === 1 && !fourthRoundPara.textContent === 'Draw' ||
+                playerTwoScore === 1 && fiveRounds.player1.fourthRound === 0 && currentPlayers[0].playerPoint === 3 && currentPlayers[1].playerPoint === 1 && !fourthRoundPara.textContent === 'Draw'
            ) {
                 fiveRounds.player2.fourthRound = 1;
                 paraPlayer2Point.textContent = `Points: ${currentPlayers[1].playerPoint}`
                 fourthRoundPara.textContent = `${currentPlayers[1].name} won 4th round`; 
            }
-           if(playerOneScore === 1 && fiveRounds.player2.fifthRound === 0 && currentPlayers[0].playerPoint === 5 && currentPlayers[1].playerPoint === 0 ||
-                playerOneScore === 1 && fiveRounds.player2.fifthRound === 0 && currentPlayers[1].playerPoint === 3 && currentPlayers[0].playerPoint === 2 ||
-                playerOneScore === 1 && fiveRounds.player2.fifthRound === 0 && currentPlayers[0].playerPoint === 3 && currentPlayers[1].playerPoint === 2 ||
-                playerOneScore === 1 && fiveRounds.player2.fifthRound === 0 && currentPlayers[1].playerPoint === 1 && currentPlayers[0].playerPoint === 4 ||
-                playerOneScore === 1 && fiveRounds.player2.fifthRound === 0 && currentPlayers[1].playerPoint === 4 && currentPlayers[0].playerPoint === 1
+           if(playerOneScore === 1 && fiveRounds.player2.fifthRound === 0 && currentPlayers[0].playerPoint === 5 && currentPlayers[1].playerPoint === 0 && !fifthRoundPara.textContent === 'Draw' ||
+                playerOneScore === 1 && fiveRounds.player2.fifthRound === 0 && currentPlayers[1].playerPoint === 3 && currentPlayers[0].playerPoint === 2 && !fifthRoundPara.textContent === 'Draw' ||
+                playerOneScore === 1 && fiveRounds.player2.fifthRound === 0 && currentPlayers[0].playerPoint === 3 && currentPlayers[1].playerPoint === 2 && !fifthRoundPara.textContent === 'Draw' ||
+                playerOneScore === 1 && fiveRounds.player2.fifthRound === 0 && currentPlayers[1].playerPoint === 1 && currentPlayers[0].playerPoint === 4 && !fifthRoundPara.textContent === 'Draw' ||
+                playerOneScore === 1 && fiveRounds.player2.fifthRound === 0 && currentPlayers[1].playerPoint === 4 && currentPlayers[0].playerPoint === 1 && !fifthRoundPara.textContent === 'Draw'
            ) {
                 fiveRounds.player1.fifthRound = 1;
                 paraPlayer1Point.textContent = `Points: ${currentPlayers[0].playerPoint}`
                 fifthRoundPara.textContent = `${currentPlayers[0].name} won 5th round`; 
            }
-           else if(playerTwoScore === 1 && fiveRounds.player1.fifthRound === 0 && currentPlayers[1].playerPoint === 5 && currentPlayers[0].playerPoint === 0 ||
-                playerTwoScore === 1 && fiveRounds.player1.fifthRound === 0 && currentPlayers[0].playerPoint === 3 && currentPlayers[1].playerPoint === 2 ||
-                playerTwoScore === 1 && fiveRounds.player1.fifthRound === 0 && currentPlayers[1].playerPoint === 3 && currentPlayers[0].playerPoint === 2 ||
-                playerTwoScore === 1 && fiveRounds.player1.fifthRound === 0 && currentPlayers[0].playerPoint === 1 && currentPlayers[1].playerPoint === 4 ||
-                playerTwoScore === 1 && fiveRounds.player1.fifthRound === 0 && currentPlayers[0].playerPoint === 4 && currentPlayers[1].playerPoint === 1
+           else if(playerTwoScore === 1 && fiveRounds.player1.fifthRound === 0 && currentPlayers[1].playerPoint === 5 && currentPlayers[0].playerPoint === 0 && !fifthRoundPara.textContent === 'Draw' ||
+                playerTwoScore === 1 && fiveRounds.player1.fifthRound === 0 && currentPlayers[0].playerPoint === 3 && currentPlayers[1].playerPoint === 2 && !fifthRoundPara.textContent === 'Draw' ||
+                playerTwoScore === 1 && fiveRounds.player1.fifthRound === 0 && currentPlayers[1].playerPoint === 3 && currentPlayers[0].playerPoint === 2 && !fifthRoundPara.textContent === 'Draw' ||
+                playerTwoScore === 1 && fiveRounds.player1.fifthRound === 0 && currentPlayers[0].playerPoint === 1 && currentPlayers[1].playerPoint === 4 && !fifthRoundPara.textContent === 'Draw' ||
+                playerTwoScore === 1 && fiveRounds.player1.fifthRound === 0 && currentPlayers[0].playerPoint === 4 && currentPlayers[1].playerPoint === 1 && !fifthRoundPara.textContent === 'Draw'
            ) {
                 fiveRounds.player2.fifthRound = 1;
                 paraPlayer2Point.textContent = `Points: ${currentPlayers[1].playerPoint}`
