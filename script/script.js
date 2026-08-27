@@ -326,6 +326,16 @@ const ticTacToe = (() => {
                         cleanBoard();
                         setTurn();
                     break;
+                    case 'second column,first row,second column,second row,third column,second row':
+                        playerOScore = 1;
+                        currentPlayers[0].totalMoves = [];
+                        currentPlayers[1].totalMoves = [];
+                        currentPlayers[0].playerPoint += 1;
+                        trackVictories();
+                        alert('Player One won this round!');
+                        if(playerOneScore === 1 || playerTwoScore === 1) {playerOneScore = 0; playerTwoScore = 0;}
+                        cleanBoard();
+                    break;
                 }
             }
             else if(playerTurn.player2 === 1 && playerTurn.player1 === 0) {
@@ -520,6 +530,16 @@ const ticTacToe = (() => {
                         if(playerOneScore === 1 || playerTwoScore === 1) {playerOneScore = 0; playerTwoScore = 0;}
                         cleanBoard();
                     break;
+                    case 'second column,first row,second column,second row,third column,second row':
+                        playerTwoScore = 1;
+                        currentPlayers[0].totalMoves = [];
+                        currentPlayers[1].totalMoves = [];
+                        currentPlayers[1].playerPoint += 1;
+                        trackVictories();
+                        alert('Player Two won this round!');
+                        if(playerOneScore === 1 || playerTwoScore === 1) {playerOneScore = 0; playerTwoScore = 0;}
+                        cleanBoard();
+                    break;
                 }
             if(player1Coordinates === 'second column,first row,second column,second row,third column,second row,first column,third row' &&
                 player2Coordinates === 'second column,first row,second column,second row,third column,second row,first column,third row') 
@@ -538,17 +558,27 @@ const ticTacToe = (() => {
         function getWinner() {
             if(fiveRounds.player1.fifthRound === 1 && fiveRounds.player2.fifthRound === 0 || fiveRounds.player2.fifthRound === 1 && fiveRounds.player1.fifthRound === 0) {
                 if(currentPlayers[0].playerPoint > currentPlayers[1].playerPoint) {
-                    const winnerDecla = document.createElement('div');
-                    winnerDecla.textContent = `${currentPlayers[0]} won in total!`;
-                    informationalBar.appendChild(winnerDecla);
+                    const winnerDecla = document.createElement('p');
+                    winnerDecla.textContent = `${currentPlayers[0].name} won the most rounds`;
+                    winnerDecla.style.backgroundColor = "rgba(1, 4, 0, 0.765);"
+                    winnerDecla.style.fontSize = "1.1rem";
+                    fiveRoundsBar.appendChild(winnerDecla);
                 }
                 else if(currentPlayers[1].playerPoint > currentPlayers[0].playerPoint) {
-                    if(currentPlayers[1].playerPoint > currentPlayers[0].playerPoint) {
                     const winnerDecla = document.createElement('p');
-                    winnerDecla.textContent = `${currentPlayers[1]} won in total!`;
-                    informationalBar.appendChild(winnerDecla);
+                    winnerDecla.textContent = `${currentPlayers[1].name} won the most rounds`;
+                    winnerDecla.style.backgroundColor = "rgba(1, 4, 0, 0.765);"
+                    winnerDecla.style.fontSize = "1.1rem";
+                    fiveRoundsBar.appendChild(winnerDecla);
                 }
+                else if(currentPlayers[0].playerPoint === currentPlayers[1].playerPoint) {
+                    const winnerDecla = document.createElement('p');
+                    winnerDecla.textContent = `${currentPlayers[0].name} and ${currentPlayers[1].name} got the same amount of points`;
+                    winnerDecla.style.backgroundColor = "rgba(1, 4, 0, 0.765);"
+                    winnerDecla.style.fontSize = "1.1rem";
+                    fiveRoundsBar.appendChild(winnerDecla);
                 }
+                
             }
         }
         function getTurn() {
@@ -626,7 +656,7 @@ const ticTacToe = (() => {
            ) {
                 fiveRounds.player2.fourthRound = 1;
                 paraPlayer2Point.textContent = `Points: ${currentPlayers[1].playerPoint}`
-                fourthRoundPara.textContent = `${currentPlayers[1].name} won 3rd round`; 
+                fourthRoundPara.textContent = `${currentPlayers[1].name} won 4th round`; 
            }
            if(playerOneScore === 1 && fiveRounds.player2.fifthRound === 0 && currentPlayers[0].playerPoint === 5 && currentPlayers[1].playerPoint === 0 ||
                 playerOneScore === 1 && fiveRounds.player2.fifthRound === 0 && currentPlayers[1].playerPoint === 3 && currentPlayers[0].playerPoint === 2 ||
@@ -882,7 +912,7 @@ const ticTacToe = (() => {
     const dialogCreatePlayer = document.querySelector("#createPlayerDialog");
     const dialogModifyPlayer = document.querySelector("#modifyPlayerDialog");
     const closeBtn = document.querySelectorAll(".closeBtn");
-    const informationalBar = document.querySelector("#informationalBarContent");
+    const fiveRoundsBar = document.querySelector("#fiveRounds");
     createPlayerBtn.addEventListener("click", () => {
         dialogCreatePlayer.showModal();
     })
