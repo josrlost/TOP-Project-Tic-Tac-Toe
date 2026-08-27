@@ -91,9 +91,11 @@ const ticTacToe = (() => {
     function modifyPlayer(name = '', playerNumber = 1) {
         if(playerNumber === 1) {
             currentPlayers[0].name = name;
+            paraPlayer1Title.textContent = name;
         }
         else if(playerNumber === 2) {
             currentPlayers[1].name = name;
+            paraPlayer2Title.textContent = name;
         }
         else {
             throw Error('Invalid input');
@@ -804,8 +806,19 @@ const ticTacToe = (() => {
     let inputName = document.querySelector("#playerName");
     let inputRadio1 = document.querySelector("#playerOne");
     let inputRadio2 = document.querySelector("#playerTwo");
+    let inputNameModify = document.querySelector("#playerNameModify");
+    let inputRadio1Modify = document.querySelector("#playerOneModify");
+    let inputRadio2Modify = document.querySelector("#playerTwoModify");
+    submitBtnModification.form.addEventListener("submit", (evt) => {
+        evt.preventDefault();
+        inputRadio1Modify.checked === true ? modifyPlayer(inputNameModify.value, 1) : modifyPlayer(inputNameModify.value, 2);
+        dialogModifyPlayer.close();
+    })
     submitBtnCreation.form.addEventListener("submit", (evt) => {
         evt.preventDefault();
+        valindatingPlayerCreation();
+    })
+    function valindatingPlayerCreation() {
         if(currentPlayers.length > 0) {
             if(currentPlayers.length === 1 && inputRadio1.checked) {
                 alert('Player already created');
@@ -830,7 +843,7 @@ const ticTacToe = (() => {
                 dialogCreatePlayer.close();
             }
         }
-    })
+    }
     return {
         currentPlayers,
         displayControl,
