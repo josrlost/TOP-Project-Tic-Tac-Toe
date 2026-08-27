@@ -123,7 +123,8 @@ const ticTacToe = (() => {
                         currentPlayers[0].playerPoint += 1;
                         trackVictories();
                         alert('Player One won this round!');
-                        if(playerOneScore === 1 || playerTwoScore === 1) {cleanBoard();};
+                        if(playerOneScore === 1 || playerTwoScore === 1) {playerOneScore = 0; playerTwoScore = 0;}
+                        cleanBoard();
                         setTurn();
                     break;
                     case 'second column,first row,second column,second row,second column,third row':
@@ -133,7 +134,8 @@ const ticTacToe = (() => {
                         currentPlayers[0].playerPoint += 1;
                         trackVictories();
                         alert('Player One won this round!');
-                        if(playerOneScore === 1 || playerTwoScore === 1) {cleanBoard();};
+                        if(playerOneScore === 1 || playerTwoScore === 1) {playerOneScore = 0; playerTwoScore = 0;}
+                        cleanBoard();
                         setTurn();
                     break;
                     case 'third column,first row,third column,second row,third column,third row':
@@ -143,7 +145,8 @@ const ticTacToe = (() => {
                         currentPlayers[0].playerPoint += 1;
                         trackVictories();
                         alert('Player One won this round!');
-                        if(playerOneScore === 1 || playerTwoScore === 1) {cleanBoard();};
+                        if(playerOneScore === 1 || playerTwoScore === 1) {playerOneScore = 0; playerTwoScore = 0;}
+                        cleanBoard();
                         setTurn();
                     break;
                     case 'first column,first row,second column,first row,third column,first row':
@@ -153,7 +156,8 @@ const ticTacToe = (() => {
                         currentPlayers[0].playerPoint += 1;
                         trackVictories();
                         alert('Player One won this round!');
-                        if(playerOneScore === 1 || playerTwoScore === 1) {cleanBoard();};
+                        if(playerOneScore === 1 || playerTwoScore === 1) {playerOneScore = 0; playerTwoScore = 0;}
+                        cleanBoard()
                         setTurn();
                     break;
                     case 'first column,second row,second column,second row,third column,second row':
@@ -164,7 +168,8 @@ const ticTacToe = (() => {
                         currentPlayers[0].playerPoint += 1;
                         trackVictories();
                         alert('Player One won this round!');
-                        if(playerOneScore === 1 || playerTwoScore === 1) {cleanBoard();};
+                        if(playerOneScore === 1 || playerTwoScore === 1) {playerOneScore = 0; playerTwoScore = 0;}
+                        cleanBoard();
                         setTurn();
                     break;
                     case 'first column,third row,second column,third row,third column,third row':
@@ -174,7 +179,8 @@ const ticTacToe = (() => {
                         currentPlayers[0].playerPoint += 1;
                         trackVictories();
                         alert('Player One won this round!');
-                        if(playerOneScore === 1 || playerTwoScore === 1) {cleanBoard();};
+                        if(playerOneScore === 1 || playerTwoScore === 1) {playerOneScore = 0; playerTwoScore = 0;}
+                        cleanBoard();
                         setTurn();
                     break;
                     case 'first column,third row,second column,second row,third column,first row':
@@ -184,7 +190,8 @@ const ticTacToe = (() => {
                         currentPlayers[0].playerPoint += 1;
                         trackVictories();
                         alert('Player One won this round!');
-                        if(playerOneScore === 1 || playerTwoScore === 1) {cleanBoard();};
+                        if(playerOneScore === 1 || playerTwoScore === 1) {playerOneScore = 0; playerTwoScore = 0;}
+                        cleanBoard();
                         setTurn();
                     break;
                     case 'third column,first row,second column,second row,first column,third row':
@@ -194,7 +201,8 @@ const ticTacToe = (() => {
                         currentPlayers[0].playerPoint += 1;
                         trackVictories();
                         alert('Player One won this round!');
-                        if(playerOneScore === 1 || playerTwoScore === 1) {cleanBoard();};
+                        if(playerOneScore === 1 || playerTwoScore === 1) {playerOneScore = 0; playerTwoScore = 0;}
+                        cleanBoard();
                         setTurn();
                     break;
                     case 'third column,third row,second column,second row,first column,first row':
@@ -204,7 +212,8 @@ const ticTacToe = (() => {
                         currentPlayers[0].playerPoint += 1;
                         trackVictories();
                         alert('Player One won this round!');
-                        if(playerOneScore === 1 || playerTwoScore === 1) {cleanBoard();};
+                        if(playerOneScore === 1 || playerTwoScore === 1) {playerOneScore = 0; playerTwoScore = 0;}
+                        cleanBoard();
                         setTurn();
                     break;
                     case 'first column,first row,second column,second row,third column,third row':
@@ -214,7 +223,8 @@ const ticTacToe = (() => {
                         currentPlayers[0].playerPoint += 1;
                         trackVictories();
                         alert('Player One won this round!');
-                        if(playerOneScore === 1 || playerTwoScore === 1) {cleanBoard();};
+                        if(playerOneScore === 1 || playerTwoScore === 1) {playerOneScore = 0; playerTwoScore = 0;}
+                        cleanBoard();
                         setTurn();
                     break;
                     case 'first column,third row,first column,second row,first column,first row':
@@ -224,7 +234,8 @@ const ticTacToe = (() => {
                         currentPlayers[0].playerPoint += 1;
                         trackVictories();
                         alert('Player One won this round!');
-                        if(playerOneScore === 1 || playerTwoScore === 1) {cleanBoard();};
+                        if(playerOneScore === 1 || playerTwoScore === 1) {playerOneScore = 0; playerTwoScore = 0;}
+                        cleanBoard();
                         setTurn();
                     break;
                     case 'second column,third row,second column,second row,second column,first row':
@@ -234,7 +245,8 @@ const ticTacToe = (() => {
                         currentPlayers[0].playerPoint += 1;
                         trackVictories();
                         alert('Player One won this round!');
-                        if(playerOneScore === 1 || playerTwoScore === 1) {cleanBoard();};
+                        if(playerOneScore === 1 || playerTwoScore === 1) {playerOneScore = 0; playerTwoScore = 0;}
+                        cleanBoard();
                         setTurn();
                     break;
                     case 'third column,third row,third column,second row,third column,first row':
@@ -244,7 +256,8 @@ const ticTacToe = (() => {
                         currentPlayers[0].playerPoint += 1;
                         trackVictories();
                         alert('Player One won this round!');
-                        if(playerOneScore === 1 || playerTwoScore === 1) {cleanBoard();};
+                        if(playerOneScore === 1 || playerTwoScore === 1) {playerOneScore = 0; playerTwoScore = 0;}
+                        cleanBoard();
                         setTurn();
                     break;
                     case 'third column,second row,second column,second row,first column,second row':
@@ -254,7 +267,8 @@ const ticTacToe = (() => {
                         currentPlayers[0].playerPoint += 1;
                         trackVictories();
                         alert('Player One won this round!');
-                        if(playerOneScore === 1 || playerTwoScore === 1) {cleanBoard();};
+                        if(playerOneScore === 1 || playerTwoScore === 1) {playerOneScore = 0; playerTwoScore = 0;}
+                        cleanBoard();
                         setTurn();
                     break;
                     case 'third column,third row,second column,third row,first column,third row':
@@ -264,7 +278,8 @@ const ticTacToe = (() => {
                         currentPlayers[0].playerPoint += 1;
                         trackVictories();
                         alert('Player One won this round!');
-                        if(playerOneScore === 1 || playerTwoScore === 1) {cleanBoard();};
+                        if(playerOneScore === 1 || playerTwoScore === 1) {playerOneScore = 0; playerTwoScore = 0;}
+                        cleanBoard();
                         setTurn();
                     break;
                     case 'third column,first row,second column,first row,first column,first row':
@@ -274,7 +289,8 @@ const ticTacToe = (() => {
                         currentPlayers[0].playerPoint += 1;
                         trackVictories();
                         alert('Player One won this round!');
-                        if(playerOneScore === 1 || playerTwoScore === 1) {cleanBoard();};
+                        if(playerOneScore === 1 || playerTwoScore === 1) {playerOneScore = 0; playerTwoScore = 0;}
+                        cleanBoard();
                         setTurn();
                     break;
                     case 'first column,second row,second column,first row,second column,second row,third column,second row':
@@ -284,7 +300,8 @@ const ticTacToe = (() => {
                         currentPlayers[0].playerPoint += 1;
                         trackVictories();
                         alert('Player One won this round!');
-                        if(playerOneScore === 1 || playerTwoScore === 1) {cleanBoard();};
+                        if(playerOneScore === 1 || playerTwoScore === 1) {playerOneScore = 0; playerTwoScore = 0;}
+                        cleanBoard();
                         setTurn();
                     break;
                     case 'second column,first row,first column,second row,second column,third row':
@@ -294,7 +311,8 @@ const ticTacToe = (() => {
                         currentPlayers[0].playerPoint += 1;
                         trackVictories();
                         alert('Player One won this round!');
-                        if(playerOneScore === 1 || playerTwoScore === 1) {cleanBoard();};
+                        if(playerOneScore === 1 || playerTwoScore === 1) {playerOneScore = 0; playerTwoScore = 0;}
+                        cleanBoard();
                         setTurn();
                     break;
                     case 'first column,second row,second column,second row,third column,third row,first column,first row':
@@ -304,7 +322,8 @@ const ticTacToe = (() => {
                         currentPlayers[0].playerPoint += 1;
                         trackVictories();
                         alert('Player One won this round!');
-                        if(playerOneScore === 1 || playerTwoScore === 1) {cleanBoard();};
+                        if(playerOneScore === 1 || playerTwoScore === 1) {playerOneScore = 0; playerTwoScore = 0;}
+                        cleanBoard();
                         setTurn();
                     break;
                 }
@@ -318,7 +337,8 @@ const ticTacToe = (() => {
                         currentPlayers[1].playerPoint += 1;
                         trackVictories();
                         alert('Player Two won this round!');
-                        if(playerOneScore === 1 || playerTwoScore === 1) {cleanBoard();};
+                        if(playerOneScore === 1 || playerTwoScore === 1) {playerOneScore = 0; playerTwoScore = 0;}
+                        cleanBoard();
                     break;
                     case 'second column,first row,second column,second row,second column,third row':
                         playerTwoScore = 1;
@@ -327,7 +347,8 @@ const ticTacToe = (() => {
                         currentPlayers[1].playerPoint += 1;
                         trackVictories();
                         alert('Player Two won this round!');
-                        if(playerOneScore === 1 || playerTwoScore === 1) {cleanBoard();};
+                        if(playerOneScore === 1 || playerTwoScore === 1) {playerOneScore = 0; playerTwoScore = 0;}
+                        cleanBoard();
                     break;
                     case 'third column,first row,third column,second row,third column,third row':
                         playerTwoScore = 1;
@@ -336,7 +357,8 @@ const ticTacToe = (() => {
                         currentPlayers[1].playerPoint += 1;
                         trackVictories();
                         alert('Player Two won this round!');
-                        if(playerOneScore === 1 || playerTwoScore === 1) {cleanBoard();};
+                        if(playerOneScore === 1 || playerTwoScore === 1) {playerOneScore = 0; playerTwoScore = 0;}
+                        cleanBoard();
                     break;
                     case 'first column,first row,second column,first row,third column,first row':
                         playerTwoScore = 1;
@@ -345,7 +367,8 @@ const ticTacToe = (() => {
                         currentPlayers[1].playerPoint += 1;
                         trackVictories();
                         alert('Player Two won this round!');
-                        if(playerOneScore === 1 || playerTwoScore === 1) {cleanBoard();};
+                        if(playerOneScore === 1 || playerTwoScore === 1) {playerOneScore = 0; playerTwoScore = 0;}
+                        cleanBoard();
                     break;
                     case 'first column,second row,second column,second row,third column,second row':
                         playerTwoScore = 1;
@@ -354,7 +377,8 @@ const ticTacToe = (() => {
                         currentPlayers[1].playerPoint += 1;
                         trackVictories();
                         alert('Player Two won this round!');
-                        if(playerOneScore === 1 || playerTwoScore === 1) {cleanBoard();};
+                        if(playerOneScore === 1 || playerTwoScore === 1) {playerOneScore = 0; playerTwoScore = 0;}
+                        cleanBoard();
                     break;
                     case 'first column,third row,second column,third row,third column,third row':
                         playerTwoScore = 1;
@@ -363,7 +387,8 @@ const ticTacToe = (() => {
                         currentPlayers[1].playerPoint += 1;
                         trackVictories();
                         alert('Player Two won this round!');
-                        if(playerOneScore === 1 || playerTwoScore === 1) {cleanBoard();};
+                        if(playerOneScore === 1 || playerTwoScore === 1) {playerOneScore = 0; playerTwoScore = 0;}
+                        cleanBoard();
                     break;
                     case 'first column,third row,second column,second row,third column,first row':
                         playerTwoScore = 1;
@@ -372,7 +397,8 @@ const ticTacToe = (() => {
                         currentPlayers[1].playerPoint += 1;
                         trackVictories();
                         alert('Player Two won this round!');
-                        if(playerOneScore === 1 || playerTwoScore === 1) {cleanBoard();};
+                        if(playerOneScore === 1 || playerTwoScore === 1) {playerOneScore = 0; playerTwoScore = 0;}
+                        cleanBoard();
                     break;
                     case 'third column,first row,second column,second row,first column,third row':
                         playerTwoScore = 1;
@@ -381,7 +407,8 @@ const ticTacToe = (() => {
                         currentPlayers[1].playerPoint += 1;
                         trackVictories();
                         alert('Player Two won this round!');
-                        if(playerOneScore === 1 || playerTwoScore === 1) {cleanBoard();};
+                        if(playerOneScore === 1 || playerTwoScore === 1) {playerOneScore = 0; playerTwoScore = 0;}
+                        cleanBoard();
                     break;
                     case 'third column,third row,second column,second row,first column,first row':
                         playerTwoScore = 1;
@@ -390,7 +417,8 @@ const ticTacToe = (() => {
                         currentPlayers[1].playerPoint += 1;
                         trackVictories();
                         alert('Player Two won this round!');
-                        if(playerOneScore === 1 || playerTwoScore === 1) {cleanBoard();};
+                        if(playerOneScore === 1 || playerTwoScore === 1) {playerOneScore = 0; playerTwoScore = 0;}
+                        cleanBoard();
                     break;
                     case 'first column,first row,second column,second row,third column,third row':
                         playerTwoScore = 1;
@@ -399,7 +427,8 @@ const ticTacToe = (() => {
                         currentPlayers[1].playerPoint += 1;
                         trackVictories();
                         alert('Player Two won this round!');
-                        if(playerOneScore === 1 || playerTwoScore === 1) {cleanBoard();};
+                        if(playerOneScore === 1 || playerTwoScore === 1) {playerOneScore = 0; playerTwoScore = 0;}
+                        cleanBoard();
                     break;
                     case 'first column,third row,first column,second row,first column,first row':
                         playerTwoScore = 1;
@@ -408,7 +437,8 @@ const ticTacToe = (() => {
                         currentPlayers[1].playerPoint += 1;
                         trackVictories();
                         alert('Player Two won this round!');
-                        if(playerOneScore === 1 || playerTwoScore === 1) {cleanBoard();};
+                        if(playerOneScore === 1 || playerTwoScore === 1) {playerOneScore = 0; playerTwoScore = 0;}
+                        cleanBoard();
                     break;
                     case 'second column,third row,second column,second row,second column,first row':
                         playerTwoScore = 1;
@@ -417,7 +447,8 @@ const ticTacToe = (() => {
                         currentPlayers[1].playerPoint += 1;
                         trackVictories();
                         alert('Player Two won this round!');
-                        if(playerOneScore === 1 || playerTwoScore === 1) {cleanBoard();};
+                        if(playerOneScore === 1 || playerTwoScore === 1) {playerOneScore = 0; playerTwoScore = 0;}
+                        cleanBoard();
                     break;
                     case 'third column,third row,third column,second row,third column,first row':
                         playerTwoScore = 1;
@@ -426,7 +457,8 @@ const ticTacToe = (() => {
                         currentPlayers[1].playerPoint += 1;
                         trackVictories();
                         alert('Player Two won this round!');
-                        if(playerOneScore === 1 || playerTwoScore === 1) {cleanBoard();};
+                        if(playerOneScore === 1 || playerTwoScore === 1) {playerOneScore = 0; playerTwoScore = 0;}
+                        cleanBoard();
                     break;
                     case 'third column,second row,second column,second row,first column,second row':
                         playerTwoScore = 1;
@@ -435,7 +467,8 @@ const ticTacToe = (() => {
                         currentPlayers[1].playerPoint += 1;
                         trackVictories();
                         alert('Player Two won this round!');
-                        if(playerOneScore === 1 || playerTwoScore === 1) {cleanBoard();};
+                        if(playerOneScore === 1 || playerTwoScore === 1) {playerOneScore = 0; playerTwoScore = 0;}
+                        cleanBoard();
                     break;
                     case 'third column,third row,second column,third row,first column,third row':
                         playerTwoScore = 1;
@@ -444,7 +477,8 @@ const ticTacToe = (() => {
                         currentPlayers[1].playerPoint += 1;
                         trackVictories();
                         alert('Player Two won this round!');
-                        if(playerOneScore === 1 || playerTwoScore === 1) {cleanBoard();};
+                        if(playerOneScore === 1 || playerTwoScore === 1) {playerOneScore = 0; playerTwoScore = 0;}
+                        cleanBoard();
                     break;
                     case 'third column,first row,second column,first row,first column,first row':
                         playerTwoScore = 1;
@@ -453,7 +487,8 @@ const ticTacToe = (() => {
                         currentPlayers[1].playerPoint += 1;
                         trackVictories();
                         alert('Player Two won this round!');
-                        if(playerOneScore === 1 || playerTwoScore === 1) {cleanBoard();};
+                        if(playerOneScore === 1 || playerTwoScore === 1) {playerOneScore = 0; playerTwoScore = 0;}
+                        cleanBoard();
                     break;
                     case 'first column,second row,second column,first row,second column,second row,third column,second row':
                         playerTwoScore = 1;
@@ -462,7 +497,8 @@ const ticTacToe = (() => {
                         currentPlayers[1].playerPoint += 1;
                         trackVictories();
                         alert('Player Two won this round!');
-                        if(playerOneScore === 1 || playerTwoScore === 1) {cleanBoard();};
+                        if(playerOneScore === 1 || playerTwoScore === 1) {playerOneScore = 0; playerTwoScore = 0;}
+                        cleanBoard();
                     break;
                     case 'second column,first row,first column,second row,second column,third row':
                         playerTwoScore = 1;
@@ -471,7 +507,8 @@ const ticTacToe = (() => {
                         currentPlayers[1].playerPoint += 1;
                         trackVictories();
                         alert('Player Two won this round!');
-                        if(playerOneScore === 1 || playerTwoScore === 1) {cleanBoard();};
+                        if(playerOneScore === 1 || playerTwoScore === 1) {playerOneScore = 0; playerTwoScore = 0;}
+                        cleanBoard();
                     break;
                     case 'first column,second row,second column,second row,third column,third row,first column,first row':
                         playerTwoScore = 1;
@@ -480,7 +517,8 @@ const ticTacToe = (() => {
                         currentPlayers[1].playerPoint += 1;
                         trackVictories();
                         alert('Player Two won this round!');
-                        if(playerOneScore === 1 || playerTwoScore === 1) {cleanBoard();};
+                        if(playerOneScore === 1 || playerTwoScore === 1) {playerOneScore = 0; playerTwoScore = 0;}
+                        cleanBoard();
                     break;
                 }
             if(player1Coordinates === 'second column,first row,second column,second row,third column,second row,first column,third row' &&
@@ -488,19 +526,29 @@ const ticTacToe = (() => {
                 {
                     currentPlayers[0].totalMoves = [];
                     currentPlayers[1].totalMoves = [];
-                    resetProvisionalScore();
+                    if(playerOneScore === 1 || playerTwoScore === 1) {playerOneScore = 0; playerTwoScore = 0;}
                     cleanBoard();
                     alert("It's a draw");
                                                         }
             }
+            console.log(playerOneScore);
+            console.log(playerTwoScore);
             currentScore = `${playerOneScore} - ${playerTwoScore}`;
         }
         function getWinner() {
-            if(playerOneScore >= 3) {
-                alert('Player one won three rounds.')
-            }
-            if(playerTwoScore >= 3) {
-                alert('Player two won three rounds.')
+            if(fiveRounds.player1.fifthRound === 1 && fiveRounds.player2.fifthRound === 0 || fiveRounds.player2.fifthRound === 1 && fiveRounds.player1.fifthRound === 0) {
+                if(currentPlayers[0].playerPoint > currentPlayers[1].playerPoint) {
+                    const winnerDecla = document.createElement('div');
+                    winnerDecla.textContent = `${currentPlayers[0]} won in total!`;
+                    informationalBar.appendChild(winnerDecla);
+                }
+                else if(currentPlayers[1].playerPoint > currentPlayers[0].playerPoint) {
+                    if(currentPlayers[1].playerPoint > currentPlayers[0].playerPoint) {
+                    const winnerDecla = document.createElement('p');
+                    winnerDecla.textContent = `${currentPlayers[1]} won in total!`;
+                    informationalBar.appendChild(winnerDecla);
+                }
+                }
             }
         }
         function getTurn() {
@@ -520,69 +568,87 @@ const ticTacToe = (() => {
             }
         }
         function trackVictories() {
-           if(currentPlayers[0].playerPoint === 1 && playerOneScore === 1 && fiveRounds.player1.firstRound === 0) {
+           if(playerOneScore === 1 && fiveRounds.player2.firstRound === 0 && currentPlayers[0].playerPoint === 1) {
                 fiveRounds.player1.firstRound = 1;
-                paraPlayer1Point.textContent = 'Point: 1';
-                firstRoundPara.textContent = `${currentPlayers[0].name} won`
+                paraPlayer1Point.textContent = `Points: ${currentPlayers[0].playerPoint}`
+                firstRoundPara.textContent = `${currentPlayers[0].name} won 1st round`; 
            }
-           else if(currentPlayers[1].playerPoint === 1 && playerTwoScore === 1 && fiveRounds.player1.firstRound === 0) {
+           else if(playerTwoScore === 1 && fiveRounds.player1.firstRound === 0  && currentPlayers[1].playerPoint === 1) {
                 fiveRounds.player2.firstRound = 1;
-                paraPlayer2Point.textContent = 'Point: 1';
-                firstRoundPara.textContent = `${currentPlayers[1].name} won`
+                paraPlayer2Point.textContent = `Points: ${currentPlayers[1].playerPoint}`
+                firstRoundPara.textContent = `${currentPlayers[1].name} won 1st round`; 
            }
-           if(currentPlayers[0].playerPoint === 2 && fiveRounds.player1.firstRound === 1 && fiveRounds.player1.secondRound === 0 ||
-                fiveRounds.player2.firstRound === 1 && playerOneScore === 1
+           if(playerOneScore === 1 && fiveRounds.player2.secondRound === 0 && currentPlayers[0].playerPoint === 2 ||
+                playerOneScore === 1 && fiveRounds.player2.secondRound === 0 && currentPlayers[1].playerPoint === 1 ||
+                playerOneScore === 1 && fiveRounds.player2.secondRound === 0 && currentPlayers[0].playerPoint === 1 && currentPlayers[1].playerPoint === 1
            ) {
                 fiveRounds.player1.secondRound = 1;
-                paraPlayer1Point.textContent = 'Points: 2';
-                secondRoundPara.textContent = `${currentPlayers[0].name} won`
+                paraPlayer1Point.textContent = `Points: ${currentPlayers[0].playerPoint}`
+                secondRoundPara.textContent = `${currentPlayers[0].name} won 2nd round`; 
            }
-            else if(fiveRounds.player2.firstRound === 1 && currentPlayers[1].playerPoint === 2 && fiveRounds.player2.secondRound === 0 ||
-                fiveRounds.player1.firstRound === 1 && playerTwoScore === 1
-            ) {
+           else if(playerTwoScore === 1 && fiveRounds.player1.secondRound === 0 && currentPlayers[1].playerPoint === 2 ||
+                playerTwoScore === 1 && fiveRounds.player1.secondRound === 0 && currentPlayers[0].playerPoint === 1 ||
+                playerTwoScore === 1 && fiveRounds.player1.secondRound === 0 && currentPlayers[1].playerPoint === 1 && currentPlayers[0].playerPoint === 1
+           ) {
                 fiveRounds.player2.secondRound = 1;
-                paraPlayer2Point.textContent = 'Points: 2';
-                secondRoundPara.textContent = `${currentPlayers[1].name} won`
+                paraPlayer2Point.textContent = `Points: ${currentPlayers[1].playerPoint}`
+                secondRoundPara.textContent = `${currentPlayers[1].name} won 2nd round`; 
            }
-           if(fiveRounds.player1.secondRound === 1 && currentPlayers[0].playerPoint === 3 && fiveRounds.player1.thirdRound === 0 ||
-                fiveRounds.player2.secondRound === 1 && fiveRounds.player1.firstRound === 1 && playerOneScore === 1 
-                && playerTwoScore === 0 && currentPlayers[0].playerPoint === 1||
-                fiveRounds.player1.secondRound === 1 && fiveRounds.player2.firstRound === 1 && playerOneScore === 1 && currentPlayers[0].playerPoint === 2
+           if(playerOneScore === 1 && fiveRounds.player2.thirdRound === 0 && currentPlayers[0].playerPoint === 3 ||
+                playerOneScore === 1 && fiveRounds.player2.thirdRound === 0 && currentPlayers[1].playerPoint === 2 && currentPlayers[0].playerPoint === 1 ||
+                playerOneScore === 1 && fiveRounds.player2.thirdRound === 0 && currentPlayers[0].playerPoint === 2 && currentPlayers[1].playerPoint === 1
            ) {
                 fiveRounds.player1.thirdRound = 1;
-                paraPlayer1Point.textContent = 'Points: 3';
-                thirdRoundPara.textContent = `${currentPlayers[0].name} won`
+                paraPlayer1Point.textContent = `Points: ${currentPlayers[0].playerPoint}`
+                thirdRoundPara.textContent = `${currentPlayers[0].name} won 3rd round`; 
            }
-           else if(fiveRounds.player2.secondRound === 1 && currentPlayers[1].playerPoint === 3 && fiveRounds.player2.thirdRound === 0 ||
-                fiveRounds.player2.secondRound === 1 && fiveRounds.player1.firstRound === 1 && playerOneScore === 1 
-                && playerTwoScore === 0 && currentPlayers[0].playerPoint === 1||
-                fiveRounds.player1.secondRound === 1 && fiveRounds.player2.firstRound === 1 && playerOneScore === 1 && currentPlayers[0].playerPoint === 2
+           else if(playerTwoScore === 1 && fiveRounds.player1.thirdRound === 0 && currentPlayers[1].playerPoint === 3 ||
+                playerTwoScore === 1 && fiveRounds.player1.thirdRound === 0 && currentPlayers[0].playerPoint === 2 && currentPlayers[1].playerPoint === 1 ||
+                playerTwoScore === 1 && fiveRounds.player1.thirdRound === 0 && currentPlayers[1].playerPoint === 2 && currentPlayers[0].playerPoint === 1
            ) {
                 fiveRounds.player2.thirdRound = 1;
-                paraPlayer2Point.textContent = 'Points: 3';
-                thirdRoundPara.textContent = `${currentPlayers[1].name} won`
+                paraPlayer2Point.textContent = `Points: ${currentPlayers[1].playerPoint}`
+                thirdRoundPara.textContent = `${currentPlayers[1].name} won 3rd round`; 
            }
-           if(fiveRounds.player1.thirdRound === 1 && currentPlayers[0].playerPoint === 4 && fiveRounds.player1.fourthRound === 0) {
+           if(playerOneScore === 1 && fiveRounds.player2.fourthRound === 0 && currentPlayers[0].playerPoint === 4 ||
+                playerOneScore === 1 && fiveRounds.player2.fourthRound === 0 && currentPlayers[1].playerPoint === 2 && currentPlayers[0].playerPoint === 2 ||
+                playerOneScore === 1 && fiveRounds.player2.fourthRound === 0 && currentPlayers[0].playerPoint === 3 && currentPlayers[1].playerPoint === 1 ||
+                playerOneScore === 1 && fiveRounds.player2.fourthRound === 0 && currentPlayers[1].playerPoint === 3 && currentPlayers[0].playerPoint === 1
+           ) {
                 fiveRounds.player1.fourthRound = 1;
-                paraPlayer1Point.textContent = 'Points: 4';
-                fourthRoundPara.textContent = `${currentPlayers[0].name} won`
+                paraPlayer1Point.textContent = `Points: ${currentPlayers[0].playerPoint}`
+                fourthRoundPara.textContent = `${currentPlayers[0].name} won 4th round`; 
            }
-           else if(fiveRounds.player2.thirdRound === 1 && currentPlayers[1].playerPoint === 4 && fiveRounds.player2.fourthRound === 0) {
+           else if(playerTwoScore === 1 && fiveRounds.player1.fourthRound === 0 && currentPlayers[1].playerPoint === 4 ||
+                playerTwoScore === 1 && fiveRounds.player1.fourthRound === 0 && currentPlayers[0].playerPoint === 2 && currentPlayers[1].playerPoint === 2 ||
+                playerTwoScore === 1 && fiveRounds.player1.fourthRound === 0 && currentPlayers[1].playerPoint === 3 && currentPlayers[0].playerPoint === 1 ||
+                playerTwoScore === 1 && fiveRounds.player1.fourthRound === 0 && currentPlayers[0].playerPoint === 3 && currentPlayers[1].playerPoint === 1
+           ) {
                 fiveRounds.player2.fourthRound = 1;
-                paraPlayer2Point.textContent = 'Points: 4';
-                fourthRoundPara.textContent = `${currentPlayers[1].name} won`
+                paraPlayer2Point.textContent = `Points: ${currentPlayers[1].playerPoint}`
+                fourthRoundPara.textContent = `${currentPlayers[1].name} won 3rd round`; 
            }
-           if(fiveRounds.player1.fourthRound === 1 && currentPlayers[0].playerPoint === 5 && fiveRounds.player1.fifthRound === 0) {
+           if(playerOneScore === 1 && fiveRounds.player2.fifthRound === 0 && currentPlayers[0].playerPoint === 5 && currentPlayers[1].playerPoint === 0 ||
+                playerOneScore === 1 && fiveRounds.player2.fifthRound === 0 && currentPlayers[1].playerPoint === 3 && currentPlayers[0].playerPoint === 2 ||
+                playerOneScore === 1 && fiveRounds.player2.fifthRound === 0 && currentPlayers[0].playerPoint === 3 && currentPlayers[1].playerPoint === 2 ||
+                playerOneScore === 1 && fiveRounds.player2.fifthRound === 0 && currentPlayers[1].playerPoint === 1 && currentPlayers[0].playerPoint === 4 ||
+                playerOneScore === 1 && fiveRounds.player2.fifthRound === 0 && currentPlayers[1].playerPoint === 4 && currentPlayers[0].playerPoint === 1
+           ) {
                 fiveRounds.player1.fifthRound = 1;
-                paraPlayer1Point.textContent = 'Points: 5';
-                fifthRoundPara.textContent = `${currentPlayers[0].name} won`
+                paraPlayer1Point.textContent = `Points: ${currentPlayers[0].playerPoint}`
+                fifthRoundPara.textContent = `${currentPlayers[0].name} won 5th round`; 
            }
-           else if(fiveRounds.player2.fourthRound === 1 && currentPlayers[1].playerPoint === 5 && fiveRounds.player2.fifthRound === 0) {
+           else if(playerTwoScore === 1 && fiveRounds.player1.fifthRound === 0 && currentPlayers[1].playerPoint === 5 && currentPlayers[0].playerPoint === 0 ||
+                playerTwoScore === 1 && fiveRounds.player1.fifthRound === 0 && currentPlayers[0].playerPoint === 3 && currentPlayers[1].playerPoint === 2 ||
+                playerTwoScore === 1 && fiveRounds.player1.fifthRound === 0 && currentPlayers[1].playerPoint === 3 && currentPlayers[0].playerPoint === 2 ||
+                playerTwoScore === 1 && fiveRounds.player1.fifthRound === 0 && currentPlayers[0].playerPoint === 1 && currentPlayers[1].playerPoint === 4 ||
+                playerTwoScore === 1 && fiveRounds.player1.fifthRound === 0 && currentPlayers[0].playerPoint === 4 && currentPlayers[1].playerPoint === 1
+           ) {
                 fiveRounds.player2.fifthRound = 1;
-                paraPlayer2Point.textContent = 'Points: 5';
-                fifthRoundPara.textContent = `${currentPlayers[1].name} won`
+                paraPlayer2Point.textContent = `Points: ${currentPlayers[1].playerPoint}`
+                fifthRoundPara.textContent = `${currentPlayers[1].name} won 5th round`; 
            }
-           console.log(fiveRounds);
+           getWinner();
         }
         return { 
             getWinner,
@@ -622,7 +688,6 @@ const ticTacToe = (() => {
             displayControl.setTurn();
             }
         }
-        resetProvisionalScore();
     })
     secondCell.addEventListener('click', () => {
         if(playerTurn.player1 === 1) {
@@ -645,7 +710,6 @@ const ticTacToe = (() => {
             displayControl.setTurn();
             }
         }
-        resetProvisionalScore();
     })
     thirdCell.addEventListener('click', () => {
         if(playerTurn.player1 === 1) {
@@ -668,7 +732,6 @@ const ticTacToe = (() => {
             displayControl.setTurn();
             }
         }
-        resetProvisionalScore();
     })
     fourthCell.addEventListener('click', () => {
         if(playerTurn.player1 === 1) {
@@ -691,7 +754,6 @@ const ticTacToe = (() => {
             displayControl.setTurn();
             }
         }
-        resetProvisionalScore();
     })
     fifthCell.addEventListener('click', () => {
         if(playerTurn.player1 === 1) {
@@ -714,7 +776,6 @@ const ticTacToe = (() => {
             displayControl.setTurn();
             }
         }
-        resetProvisionalScore();
     })
     sixthCell.addEventListener('click', () => {
         if(playerTurn.player1 === 1) {
@@ -737,7 +798,6 @@ const ticTacToe = (() => {
             displayControl.setTurn();
             }
         }
-        resetProvisionalScore();
     })
     seventhCell.addEventListener('click', () => {
         if(playerTurn.player1 === 1) {
@@ -760,7 +820,6 @@ const ticTacToe = (() => {
             displayControl.setTurn();
             }
         }
-        resetProvisionalScore();
     })
     eigthCell.addEventListener('click', () => {
         if(playerTurn.player1 === 1) {
@@ -783,7 +842,6 @@ const ticTacToe = (() => {
             displayControl.setTurn();
             }
         }
-        resetProvisionalScore();
     })
     ninethCell.addEventListener('click', () => {
         if(playerTurn.player1 === 1) {
@@ -806,7 +864,6 @@ const ticTacToe = (() => {
             displayControl.setTurn();
             }
         }
-        resetProvisionalScore();
     })
     function cleanBoard() {
         firstCell.textContent = '';
@@ -819,17 +876,13 @@ const ticTacToe = (() => {
         eigthCell.textContent = '';
         ninethCell.textContent = '';
     }
-    function resetProvisionalScore() {
-        playerOneScore = 0;
-        playerTwoScore = 0;
-    }
     const createPlayerBtn = document.querySelector("#createPlayerBtn");
     const modifyPlayerBtn = document.querySelector("#modifyPlayerBtn");
     const restartGameBtn = document.querySelector("#restartGameBtn");
     const dialogCreatePlayer = document.querySelector("#createPlayerDialog");
     const dialogModifyPlayer = document.querySelector("#modifyPlayerDialog");
-    const closeBtn = document.querySelectorAll('.closeBtn');
-    const paraFiveRounds = document.querySelector('#fiveRounds');
+    const closeBtn = document.querySelectorAll(".closeBtn");
+    const informationalBar = document.querySelector("#informationalBarContent");
     createPlayerBtn.addEventListener("click", () => {
         dialogCreatePlayer.showModal();
     })
