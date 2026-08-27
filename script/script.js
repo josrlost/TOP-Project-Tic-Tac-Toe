@@ -523,68 +523,64 @@ const ticTacToe = (() => {
            if(currentPlayers[0].playerPoint === 1 && playerOneScore === 1 && fiveRounds.player1.firstRound === 0) {
                 fiveRounds.player1.firstRound = 1;
                 paraPlayer1Point.textContent = 'Point: 1';
-                paraPoint.textContent = `${currentPlayers[0].name} won`
+                firstRoundPara.textContent = `${currentPlayers[0].name} won`
            }
-           else if(currentPlayers[1].playerPoint === 1 && playerTwoScore === 1 && fiveRounds.player2.firstRound === 0) {
+           else if(currentPlayers[1].playerPoint === 1 && playerTwoScore === 1 && fiveRounds.player1.firstRound === 0) {
                 fiveRounds.player2.firstRound = 1;
                 paraPlayer2Point.textContent = 'Point: 1';
-                paraPoint.textContent = `${currentPlayers[1].name} won`
+                firstRoundPara.textContent = `${currentPlayers[1].name} won`
            }
-           if(currentPlayers[0].playerPoint === 2 && fiveRounds.player1.firstRound === 1 && fiveRounds.player1.secondRound === 0) {
+           if(currentPlayers[0].playerPoint === 2 && fiveRounds.player1.firstRound === 1 && fiveRounds.player1.secondRound === 0 ||
+                fiveRounds.player2.firstRound === 1 && playerOneScore === 1
+           ) {
                 fiveRounds.player1.secondRound = 1;
                 paraPlayer1Point.textContent = 'Points: 2';
-                let paragr1 = document.createElement('p');
-                paragr1.textContent = `${currentPlayers[0].name} won`
-                paraFiveRounds.appendChild(paragr1);
+                secondRoundPara.textContent = `${currentPlayers[0].name} won`
            }
-            else if(fiveRounds.player2.firstRound === 1 && currentPlayers[1].playerPoint === 2 && fiveRounds.player2.secondRound === 0) {
+            else if(fiveRounds.player2.firstRound === 1 && currentPlayers[1].playerPoint === 2 && fiveRounds.player2.secondRound === 0 ||
+                fiveRounds.player1.firstRound === 1 && playerTwoScore === 1
+            ) {
                 fiveRounds.player2.secondRound = 1;
                 paraPlayer2Point.textContent = 'Points: 2';
-                let paragr1 = document.createElement('p');
-                paragr1.textContent = `${currentPlayers[1].name} won`
-                paraFiveRounds.appendChild(paragr1);
+                secondRoundPara.textContent = `${currentPlayers[1].name} won`
            }
-           if(fiveRounds.player1.secondRound === 1 && currentPlayers[0].playerPoint === 3 && fiveRounds.player1.thirdRound === 0) {
+           if(fiveRounds.player1.secondRound === 1 && currentPlayers[0].playerPoint === 3 && fiveRounds.player1.thirdRound === 0 ||
+                fiveRounds.player2.secondRound === 1 && fiveRounds.player1.firstRound === 1 && playerOneScore === 1 
+                && playerTwoScore === 0 && currentPlayers[0].playerPoint === 1||
+                fiveRounds.player1.secondRound === 1 && fiveRounds.player2.firstRound === 1 && playerOneScore === 1 && currentPlayers[0].playerPoint === 2
+           ) {
                 fiveRounds.player1.thirdRound = 1;
                 paraPlayer1Point.textContent = 'Points: 3';
-                let paragr2 = document.createElement('p');
-                paragr2.textContent = `${currentPlayers[0].name} won`
-                paraFiveRounds.appendChild(paragr2);
+                thirdRoundPara.textContent = `${currentPlayers[0].name} won`
            }
-           else if(fiveRounds.player2.secondRound === 1 && currentPlayers[1].playerPoint === 3 && fiveRounds.player2.thirdRound === 0) {
+           else if(fiveRounds.player2.secondRound === 1 && currentPlayers[1].playerPoint === 3 && fiveRounds.player2.thirdRound === 0 ||
+                fiveRounds.player2.secondRound === 1 && fiveRounds.player1.firstRound === 1 && playerOneScore === 1 
+                && playerTwoScore === 0 && currentPlayers[0].playerPoint === 1||
+                fiveRounds.player1.secondRound === 1 && fiveRounds.player2.firstRound === 1 && playerOneScore === 1 && currentPlayers[0].playerPoint === 2
+           ) {
                 fiveRounds.player2.thirdRound = 1;
                 paraPlayer2Point.textContent = 'Points: 3';
-                let paragr2 = document.createElement('p');
-                paragr2.textContent = `${currentPlayers[1].name} won`
-                paraFiveRounds.appendChild(paragr2);
+                thirdRoundPara.textContent = `${currentPlayers[1].name} won`
            }
            if(fiveRounds.player1.thirdRound === 1 && currentPlayers[0].playerPoint === 4 && fiveRounds.player1.fourthRound === 0) {
                 fiveRounds.player1.fourthRound = 1;
                 paraPlayer1Point.textContent = 'Points: 4';
-                let paragr3 = document.createElement('p');
-                paragr3.textContent = `${currentPlayers[0].name} won`
-                paraFiveRounds.appendChild(paragr3);
+                fourthRoundPara.textContent = `${currentPlayers[0].name} won`
            }
            else if(fiveRounds.player2.thirdRound === 1 && currentPlayers[1].playerPoint === 4 && fiveRounds.player2.fourthRound === 0) {
                 fiveRounds.player2.fourthRound = 1;
                 paraPlayer2Point.textContent = 'Points: 4';
-                let paragr3 = document.createElement('p');
-                paragr3.textContent = `${currentPlayers[1].name} won`
-                paraFiveRounds.appendChild(paragr3);
+                fourthRoundPara.textContent = `${currentPlayers[1].name} won`
            }
            if(fiveRounds.player1.fourthRound === 1 && currentPlayers[0].playerPoint === 5 && fiveRounds.player1.fifthRound === 0) {
                 fiveRounds.player1.fifthRound = 1;
                 paraPlayer1Point.textContent = 'Points: 5';
-                let paragr4 = document.createElement('p');
-                paragr4.textContent = `${currentPlayers[0].name} won`
-                paraFiveRounds.appendChild(paragr4);
+                fifthRoundPara.textContent = `${currentPlayers[0].name} won`
            }
            else if(fiveRounds.player2.fourthRound === 1 && currentPlayers[1].playerPoint === 5 && fiveRounds.player2.fifthRound === 0) {
                 fiveRounds.player2.fifthRound = 1;
                 paraPlayer2Point.textContent = 'Points: 5';
-                let paragr4 = document.createElement('p');
-                paragr4.textContent = `${currentPlayers[1].name} won`
-                paraFiveRounds.appendChild(paragr4);
+                fifthRoundPara.textContent = `${currentPlayers[1].name} won`
            }
            console.log(fiveRounds);
         }
@@ -607,154 +603,208 @@ const ticTacToe = (() => {
     const ninethCell = document.querySelector('#ninethCell');
     firstCell.addEventListener('click', () => {
         if(playerTurn.player1 === 1) {
+            if(firstCell.textContent === 'O' || firstCell.textContent === 'X') {alert('That square is already marked')}
+            else {
             firstCell.textContent = 'X';
             firstCell.style.color = 'red';
             currentPlayers[0].makingMove(1, 1);
             displayControl.setTheCurrentScore();
             displayControl.setTurn();
+            }
         }
         else if(playerTurn.player2 === 1) {
+            if(firstCell.textContent === 'X' || firstCell.textContent === 'O') {alert('That square is already marked')}
+            else {
             firstCell.textContent = 'O';
             firstCell.style.color = 'green';
             currentPlayers[1].makingMove(1, 1);
             displayControl.setTheCurrentScore();
             displayControl.setTurn();
+            }
         }
         resetProvisionalScore();
     })
     secondCell.addEventListener('click', () => {
         if(playerTurn.player1 === 1) {
+            if(secondCell.textContent === 'O' || secondCell.textContent === 'X') {alert('That square is already marked')}
+            else {
             secondCell.textContent = 'X';
             secondCell.style.color = 'red';
             currentPlayers[0].makingMove(1, 2);
             displayControl.setTheCurrentScore();
             displayControl.setTurn();
+            }
         }
         else if(playerTurn.player2 === 1) {
+            if(secondCell.textContent === 'X' || secondCell.textContent === 'O') {alert('That square is already marked')}
+            else {
             secondCell.textContent = 'O';
             secondCell.style.color = 'green';
             currentPlayers[1].makingMove(1, 2);
             displayControl.setTheCurrentScore();
             displayControl.setTurn();
+            }
         }
         resetProvisionalScore();
     })
     thirdCell.addEventListener('click', () => {
         if(playerTurn.player1 === 1) {
+            if(thirdCell.textContent === 'O' || thirdCell.textContent === 'X') {alert('That square is already marked')}
+            else {
             thirdCell.textContent = 'X';
             thirdCell.style.color = 'red';
             currentPlayers[0].makingMove(1, 3);
             displayControl.setTheCurrentScore();
             displayControl.setTurn();
+            }
         }
         else if(playerTurn.player2 === 1) {
+            if(thirdCell.textContent === 'X' || thirdCell.textContent === 'O') {alert('That square is already marked')}
+            else {
             thirdCell.textContent = 'O';
             thirdCell.style.color = 'green';
             currentPlayers[1].makingMove(1, 3);
             displayControl.setTheCurrentScore();
             displayControl.setTurn();
+            }
         }
         resetProvisionalScore();
     })
     fourthCell.addEventListener('click', () => {
         if(playerTurn.player1 === 1) {
+            if(fourthCell.textContent === 'O' || fourthCell.textContent === 'X') {alert('That square is already marked')}
+            else {
             fourthCell.textContent = 'X';
             fourthCell.style.color = 'red';
             currentPlayers[0].makingMove(2, 1);
             displayControl.setTheCurrentScore();
             displayControl.setTurn();
+            }
         }
         else if(playerTurn.player2 === 1) {
+            if(fourthCell.textContent === 'X' || fourthCell.textContent === 'X') {alert('That square is already marked')}
+            else {
             fourthCell.textContent = 'O';
             fourthCell.style.color = 'green';
             currentPlayers[1].makingMove(2, 1);
             displayControl.setTheCurrentScore();
             displayControl.setTurn();
+            }
         }
         resetProvisionalScore();
     })
     fifthCell.addEventListener('click', () => {
         if(playerTurn.player1 === 1) {
+            if(fifthCell.textContent === 'O' || fifthCell.textContent === 'X') {alert('That square is already marked')}
+            else {
             fifthCell.textContent = 'X';
             fifthCell.style.color = 'red';
             currentPlayers[0].makingMove(2, 2);
             displayControl.setTheCurrentScore();
             displayControl.setTurn();
+            }
         }
         else if(playerTurn.player2 === 1) {
+            if(fifthCell.textContent === 'X' || fifthCell.textContent === 'O') {alert('That square is already marked')}
+            else {
             fifthCell.textContent = 'O';
             fifthCell.style.color = 'green';
             currentPlayers[1].makingMove(2, 2);
             displayControl.setTheCurrentScore();
             displayControl.setTurn();
+            }
         }
         resetProvisionalScore();
     })
     sixthCell.addEventListener('click', () => {
         if(playerTurn.player1 === 1) {
+            if(sixthCell.textContent === 'O' || sixthCell.textContent === 'X') {alert('That square is already marked')}
+            else {
             sixthCell.textContent = 'X';
             sixthCell.style.color = 'red';            
             currentPlayers[0].makingMove(2, 3);
             displayControl.setTheCurrentScore();
             displayControl.setTurn();
+            }
         }
         else if(playerTurn.player2 === 1) {
+            if(sixthCell.textContent === 'X' || sixthCell.textContent === 'O') {alert('That square is already marked')}
+            else {
             sixthCell.textContent = 'O';
             sixthCell.style.color = 'green';            
             currentPlayers[1].makingMove(2, 3);
             displayControl.setTheCurrentScore();
             displayControl.setTurn();
+            }
         }
         resetProvisionalScore();
     })
     seventhCell.addEventListener('click', () => {
         if(playerTurn.player1 === 1) {
+            if(seventhCell.textContent === 'O' || seventhCell.textContent === 'X') {alert('That square is already marked')}
+            else {
             seventhCell.textContent = 'X';
             seventhCell.style.color = 'red';
             currentPlayers[0].makingMove(3, 1);
             displayControl.setTheCurrentScore();
             displayControl.setTurn();
+            }
         }
         else if(playerTurn.player2 === 1) {
+            if(seventhCell.textContent === 'X' || seventhCell.textContent === 'O') {alert('That square is already marked')}
+            else {
             seventhCell.textContent = 'O';
             seventhCell.style.color = 'green';
             currentPlayers[1].makingMove(3, 1);
             displayControl.setTheCurrentScore();
             displayControl.setTurn();
+            }
         }
         resetProvisionalScore();
     })
     eigthCell.addEventListener('click', () => {
         if(playerTurn.player1 === 1) {
+            if(eigthCell.textContent === 'O' || eigthCell.textContent === 'X') {alert('That square is already marked')}
+            else {
             eigthCell.textContent = 'X';
             eigthCell.style.color = 'red';
             currentPlayers[0].makingMove(3, 2);
             displayControl.setTheCurrentScore();
             displayControl.setTurn();
+            }
         }
         else if(playerTurn.player2 === 1) {
+            if(eigthCell.textContent === 'X'|| eigthCell.textContent === 'O') {alert('That square is already marked')}
+            else {
             eigthCell.textContent = 'O';
             eigthCell.style.color = 'green';
             currentPlayers[1].makingMove(3, 2);
             displayControl.setTheCurrentScore();
             displayControl.setTurn();
+            }
         }
         resetProvisionalScore();
     })
     ninethCell.addEventListener('click', () => {
         if(playerTurn.player1 === 1) {
+            if(ninethCell.textContent === 'O' || ninethCell.textContent === 'X') {alert('That square is already marked')}
+            else {
             ninethCell.textContent = 'X';
             ninethCell.style.color = 'red';
             currentPlayers[0].makingMove(3, 3);
             displayControl.setTheCurrentScore();
             displayControl.setTurn();
+            }
         }
         else if(playerTurn.player2 === 1) {
+            if(ninethCell.textContent === 'X' || ninethCell.textContent === 'O') {alert('That square is already marked')}
+            else {
             ninethCell.textContent = 'O';
             ninethCell.style.color = 'green';
             currentPlayers[1].makingMove(3, 3);
             displayControl.setTheCurrentScore();
             displayControl.setTurn();
+            }
         }
         resetProvisionalScore();
     })
@@ -800,7 +850,11 @@ const ticTacToe = (() => {
     let paraPlayer2Point = document.querySelector("#player2PointParagraph");
     let paraPlayer1Title = document.querySelector("#paraPlayer1Title");
     let paraPlayer2Title = document.querySelector("#paraPlayer2Title");
-    let paraPoint = document.querySelector("#paraPoint");
+    let firstRoundPara = document.querySelector("#firstRound");
+    let secondRoundPara = document.querySelector("#secondRound");
+    let thirdRoundPara = document.querySelector("#thirdRound");
+    let fourthRoundPara = document.querySelector("#fourthRound");
+    let fifthRoundPara = document.querySelector("#fifthRound");
     const submitBtnCreation = document.querySelector("#submitBtnCreate");
     const submitBtnModification = document.querySelector("#submitBtnModify");
     let inputName = document.querySelector("#playerName");
